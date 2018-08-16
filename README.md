@@ -18,25 +18,25 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-[your text here]
+Ubuntu
 
 -------------------------------------------------------------------------------
 What product or service is this for:
 -------------------------------------------------------------------------------
-[your text here]
+Ubuntu
 
 -------------------------------------------------------------------------------
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-[your text here]
+We're a well-known Linux distro
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- Name: Mathieu Trudel-Lapierre
+- Position: engineer
+- Email address: mathieu.trudel-lapierre@canonical.com
+- PGP key: cyphermox.pub
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
@@ -44,41 +44,72 @@ Who is the secondary contact for security updates, etc.
 - Name:
 - Position:
 - Email address:
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
+- PGP key: 
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-[our url here]
+15 + commits up to dd3230d0
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+https://code.launchpad.net/~ubuntu-core-dev/shim/+git/shim/+ref/master
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+No patches
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-[your text here]
+Ubuntu 18.10
+binutils 2.31.1-2ubuntu1
+gcc 4:8.1.0-2ubuntu1
+gnu-efi 3.0.8-0ubuntu1
+libc6-dev 2.27-3ubuntu1
+
+gnu-efi is not yet available in Ubuntu 18.10, but is available here (same place that built shim):
+https://launchpad.net/~canonical-foundations/+archive/ubuntu/shim
+
+To build:
+
+Any distro with LXD that can run a daily ubuntu container will
+suffice.
+
+- lxd init   # follow the defaults
+
+Steps to build shim:
+- lxc launch ubuntu-daily:cosmic
+# Note the name of the created container, shim will be built in it.
+- lxc exec <container name> bash
+- add-apt-repository ppa:canonical-foundations/shim
+- apt build-dep shim
+- apt install git-buildpackage debhelper gnu-efi sbsigntool libelf-dev
+devscripts
+- git clone https://git.launchpad.net/~ubuntu-core-dev/shim/+git/shim
+- cd shim
+- gbp buildpackage -us -uc
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-[your text here]
-
+buildlog_ubuntu-cosmic-amd64.shim_15+1531942534.dd3230d-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-cosmic-arm64.shim_15+1531942534.dd3230d-0ubuntu1_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-[your text here]
+grub2 2.02-2ubuntu13
+
+Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
+Patches are all available in the repo for grub2:
+https://git.launchpad.net/~ubuntu-core-dev/grub/+git/ubuntu/tree/debian/patches?h=ubuntu
+... and marked "linuxefi_*"
 
 -------------------------------------------------------------------------------
 Put info about what kernel you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-[your text here]
+Varying Linux kernel versions; see https://launchpad.net/ubuntu/+source/linux
 
