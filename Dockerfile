@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic@sha256:e27913f0141e3d2ac5c4f806606d02c9eb6520bbe75925e732fad8417d1770b0
+FROM ubuntu:cosmic
 
 RUN apt update -y
 RUN DEBIAN_FRONTEND=noninteractive apt install -y devscripts git-buildpackage software-properties-common
