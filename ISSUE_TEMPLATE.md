@@ -13,11 +13,9 @@ Make sure you have provided the following information:
 Ubuntu
 
 ###### Version of shim:
-shim 15-based snapshot, up to commit dd3230d07f369cc39caaa7eb23558a64586d2713
+shim 15-based snapshot, up to commit 3beb971
 
 ###### Sysdev Submission ID:
-13798417143019670
-13916236779369240
 
 ###### What product or service is this for:
 Ubuntu

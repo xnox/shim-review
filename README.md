@@ -49,7 +49,7 @@ Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-15 + commits up to dd3230d0
+15 + commits up to 3beb971
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
@@ -65,8 +65,8 @@ No patches
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
 Ubuntu 18.10
-binutils 2.31.1-2ubuntu1
-gcc 4:8.1.0-2ubuntu1
+binutils 2.31.1-3ubuntu2
+gcc 4:8.2.0-1ubuntu1
 gnu-efi 3.0.8-0ubuntu1
 libc6-dev 2.27-3ubuntu1
 
@@ -95,8 +95,8 @@ devscripts
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-buildlog_ubuntu-cosmic-amd64.shim_15+1531942534.dd3230d-0ubuntu1_BUILDING.txt
-buildlog_ubuntu-cosmic-arm64.shim_15+1531942534.dd3230d-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-cosmic-amd64.shim_15+1533136590.3beb971-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-cosmic-arm64.shim_15+1533136590.3beb971-0ubuntu1_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
