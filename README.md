@@ -70,9 +70,6 @@ gcc 4:8.2.0-1ubuntu1
 gnu-efi 3.0.8-0ubuntu1
 libc6-dev 2.27-3ubuntu1
 
-gnu-efi is not yet available in Ubuntu 18.10, but is available here (same place that built shim):
-https://launchpad.net/~canonical-foundations/+archive/ubuntu/shim
-
 To build:
 
 Any distro with LXD that can run a daily ubuntu container will
@@ -84,7 +81,6 @@ Steps to build shim:
 - lxc launch ubuntu-daily:cosmic
 # Note the name of the created container, shim will be built in it.
 - lxc exec <container name> bash
-- add-apt-repository ppa:canonical-foundations/shim
 - apt build-dep shim
 - apt install git-buildpackage debhelper gnu-efi sbsigntool libelf-dev
 devscripts
