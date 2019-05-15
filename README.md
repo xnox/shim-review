@@ -59,16 +59,21 @@ https://code.launchpad.net/~ubuntu-core-dev/shim/+git/shim/+ref/master
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-No patches
+  * d/p/VLogError-Avoid-NULL-pointer-dereferences-in-V-Sprin.patch: Fix
+    NULL pointer dereferences that lead to an exception error on arm64.
+    (LP: #1811722)
+  * d/p/Fix-OBJ_create-to-tolerate-a-NULL-sn-and-ln.patch: Fix NULL
+    pointer dereference when calling OBJ_create() that leads to an
+    exception error on arm64. (LP: #1811901)
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-Ubuntu 18.10
-binutils 2.31.1-3ubuntu2
-gcc 4:8.2.0-1ubuntu1
-gnu-efi 3.0.8-0ubuntu1
-libc6-dev 2.27-3ubuntu1
+Ubuntu 19.10
+binutils 2.32-8ubuntu1
+gcc 4:8.3.0-1ubuntu3
+gnu-efi 3.0.9-1
+libc6-dev 2.29-0ubuntu2
 
 To build:
 
@@ -78,7 +83,7 @@ suffice.
 - lxd init   # follow the defaults
 
 Steps to build shim:
-- lxc launch ubuntu-daily:cosmic
+- lxc launch ubuntu-daily:eoan
 # Note the name of the created container, shim will be built in it.
 - lxc exec <container name> bash
 - sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
@@ -93,13 +98,13 @@ devscripts
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-buildlog_ubuntu-cosmic-amd64.shim_15+1533136590.3beb971-0ubuntu1_BUILDING.txt
-buildlog_ubuntu-cosmic-arm64.shim_15+1533136590.3beb971-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-eoan-amd64.shim_15+1533136590.3beb971-0ubuntu2_BUILDING.txt
+buildlog_ubuntu-eoan-arm64.shim_15+1533136590.3beb971-0ubuntu2_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-grub2 2.02-2ubuntu13
+grub2 2.02+dfsg1-12ubuntu2
 
 Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
 Patches are all available in the repo for grub2:

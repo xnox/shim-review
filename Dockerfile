@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic
+FROM ubuntu:eoan
 
 RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
 RUN apt update -y
