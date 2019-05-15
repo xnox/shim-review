@@ -41,10 +41,10 @@ Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key: 
+- Name: dann frazier
+- Position: engineer
+- Email address: dannf@ubuntu.com
+- PGP key: dannf.pub
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
