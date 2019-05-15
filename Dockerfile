@@ -1,5 +1,6 @@
 FROM ubuntu:cosmic
 
+RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
 RUN apt update -y
 RUN DEBIAN_FRONTEND=noninteractive apt install -y devscripts git-buildpackage software-properties-common
 RUN apt build-dep -y shim

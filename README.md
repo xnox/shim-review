@@ -81,6 +81,8 @@ Steps to build shim:
 - lxc launch ubuntu-daily:cosmic
 # Note the name of the created container, shim will be built in it.
 - lxc exec <container name> bash
+- sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
+- apt update
 - apt build-dep shim
 - apt install git-buildpackage debhelper gnu-efi sbsigntool libelf-dev
 devscripts
