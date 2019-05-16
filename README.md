@@ -71,7 +71,7 @@ What OS and toolchain must we use to reproduce this build?  Include where to fin
 -------------------------------------------------------------------------------
 Ubuntu 19.10
 binutils 2.32-8ubuntu1
-gcc 4:8.3.0-1ubuntu3
+gcc-8 8.3.0-12ubuntu1
 gnu-efi 3.0.9-1
 libc6-dev 2.29-0ubuntu2
 
