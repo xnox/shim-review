@@ -18,7 +18,7 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-Ubuntu
+Canonical Ltd.
 
 -------------------------------------------------------------------------------
 What product or service is this for:
@@ -49,7 +49,7 @@ Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-15 + commits up to 3beb971
+15 + commits up to a4a1fbe with added patches
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
@@ -59,23 +59,34 @@ https://code.launchpad.net/~ubuntu-core-dev/shim/+git/shim/+ref/master
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-  * d/p/VLogError-Avoid-NULL-pointer-dereferences-in-V-Sprin.patch: Fix
-    NULL pointer dereferences that lead to an exception error on arm64.
-    (LP: #1811722)
   * d/p/Fix-OBJ_create-to-tolerate-a-NULL-sn-and-ln.patch: Fix NULL
     pointer dereference when calling OBJ_create() that leads to an
     exception error on arm64. (LP: #1811901)
+  * debian/patches/MokManager-avoid-unaligned.patch: Fix compilation with GCC9:
+    avoid -Werror=address-of-packed-member errors in MokManager.
+  * debian/patches/tpm-correctness-1.patch,
+    debian/patches/tpm-correctness-2.patch: fix issues in TPM calls to ensure
+    the measurements are consistent with what is entered in the TPM event log.
+  * debian/patches/tpm-correctness-3.patch: Don't log duplicate identical
+    TPM events.
+  * debian/patches/MokManager-hidpi-support.patch: Do a little bit more to
+    try to get a more usable screen resolution for MokManager when running on
+    HiDPI screens; by trying to detect such cases and switching to mode 0.
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
 Ubuntu 19.10
-binutils 2.32-8ubuntu1
-gcc-8 8.3.0-12ubuntu1
+binutils 2.33-2ubuntu1
+gcc-9 9.2.1-9ubuntu2 
 gnu-efi 3.0.9-1
-libc6-dev 2.29-0ubuntu2
+libc6-dev 2.30-0ubuntu2
 
 To build:
+
+Use included Dockerfile;
+
+OR
 
 Any distro with LXD that can run a daily ubuntu container will
 suffice.
@@ -83,7 +94,7 @@ suffice.
 - lxd init   # follow the defaults
 
 Steps to build shim:
-- lxc launch ubuntu-daily:eoan
+- lxc launch ubuntu:eoan
 # Note the name of the created container, shim will be built in it.
 - lxc exec <container name> bash
 - sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
@@ -98,18 +109,21 @@ devscripts
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-buildlog_ubuntu-eoan-amd64.shim_15+1533136590.3beb971-0ubuntu2_BUILDING.txt
-buildlog_ubuntu-eoan-arm64.shim_15+1533136590.3beb971-0ubuntu2_BUILDING.txt
+buildlog_ubuntu-eoan-amd64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-eoan-arm64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-grub2 2.02+dfsg1-12ubuntu2
+grub2 2.04-1ubuntu12
 
 Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
 Patches are all available in the repo for grub2:
 https://git.launchpad.net/~ubuntu-core-dev/grub/+git/ubuntu/tree/debian/patches?h=ubuntu
-... and marked "linuxefi_*"
+... and marked "linuxefi_*" for the SecureBoot specific patches.
+
+Patches from Debian are not specially marked; but as the code is based on Debian's GRUB,
+Ubuntu-specific patches are marked "ubuntu-*"
 
 -------------------------------------------------------------------------------
 Put info about what kernel you're using, including which patches it includes to enforce Secure Boot here:
