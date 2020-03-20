@@ -72,6 +72,8 @@ What patches are being applied and why:
   * debian/patches/MokManager-hidpi-support.patch: Do a little bit more to
     try to get a more usable screen resolution for MokManager when running on
     HiDPI screens; by trying to detect such cases and switching to mode 0.
+  * d/patches/fix-path-checks.patch: Cherry-pick upstream fix for regression
+    in loading fwupd, or anything else specified as an argument (LP: #1864223)
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
