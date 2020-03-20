@@ -78,11 +78,11 @@ What patches are being applied and why:
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-Ubuntu 19.10
-binutils 2.33-2ubuntu1
-gcc-9 9.2.1-9ubuntu2 
+Ubuntu 20.04
+binutils 2.34-4ubuntu1
+gcc-9 9.3.0-3ubuntu1
 gnu-efi 3.0.9-1
-libc6-dev 2.30-0ubuntu2
+libc6-dev 2.31-0ubuntu6
 
 To build:
 
@@ -117,7 +117,7 @@ buildlog_ubuntu-eoan-arm64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-grub2 2.04-1ubuntu12
+grub2 2.04-1ubuntu22
 
 Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
 Patches are all available in the repo for grub2:
