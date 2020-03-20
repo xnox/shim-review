@@ -33,10 +33,10 @@ We're a well-known Linux distro
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name: Mathieu Trudel-Lapierre
+- Name: Julian Andres Klode
 - Position: engineer
-- Email address: mathieu.trudel-lapierre@canonical.com
-- PGP key: cyphermox.pub
+- Email address: julian.klode@canonical.com
+- PGP key: juliank.pub
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
