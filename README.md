@@ -111,8 +111,8 @@ devscripts
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-buildlog_ubuntu-eoan-amd64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
-buildlog_ubuntu-eoan-arm64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-focal-amd64.shim_15+1552672080.a4a1fbe-0ubuntu2_BUILDING.txt
+buildlog_ubuntu-focal-arm64.shim_15+1552672080.a4a1fbe-0ubuntu2_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
