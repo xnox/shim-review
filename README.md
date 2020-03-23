@@ -33,10 +33,10 @@ We're a well-known Linux distro
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name: Mathieu Trudel-Lapierre
+- Name: Julian Andres Klode
 - Position: engineer
-- Email address: mathieu.trudel-lapierre@canonical.com
-- PGP key: cyphermox.pub
+- Email address: julian.klode@canonical.com
+- PGP key: juliank.pub
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
@@ -72,15 +72,17 @@ What patches are being applied and why:
   * debian/patches/MokManager-hidpi-support.patch: Do a little bit more to
     try to get a more usable screen resolution for MokManager when running on
     HiDPI screens; by trying to detect such cases and switching to mode 0.
+  * d/patches/fix-path-checks.patch: Cherry-pick upstream fix for regression
+    in loading fwupd, or anything else specified as an argument (LP: #1864223)
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
-Ubuntu 19.10
-binutils 2.33-2ubuntu1
-gcc-9 9.2.1-9ubuntu2 
+Ubuntu 20.04
+binutils 2.34-4ubuntu1
+gcc-9 9.3.0-3ubuntu1
 gnu-efi 3.0.9-1
-libc6-dev 2.30-0ubuntu2
+libc6-dev 2.31-0ubuntu6
 
 To build:
 
@@ -109,13 +111,13 @@ devscripts
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-buildlog_ubuntu-eoan-amd64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
-buildlog_ubuntu-eoan-arm64.shim_15+1552672080.a4a1fbe-0ubuntu1_BUILDING.txt
+buildlog_ubuntu-focal-amd64.shim_15+1552672080.a4a1fbe-0ubuntu2_BUILDING.txt
+buildlog_ubuntu-focal-arm64.shim_15+1552672080.a4a1fbe-0ubuntu2_BUILDING.txt
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-grub2 2.04-1ubuntu12
+grub2 2.04-1ubuntu22
 
 Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
 Patches are all available in the repo for grub2:
