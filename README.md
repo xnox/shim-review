@@ -222,11 +222,11 @@ certificate, and replaces all the hashes in the vendor dbx with the
 currently in use certs.
 
 Other changes compared with our previous shim submissions:
- - out of MokListRT mirror size considerations, we have stop using
-   shim ephemeral signing certificate. And instead we use our signing
-   cert issued by our CA to sign fb.efi & mm.efi like most other
-   distros do. This also now makes our shim builds reproducible like
-   everyone else.
+ - out of MokListRT mirror size considerations, we have stopped using
+   shim's ephemeral signing certificate. And instead we use our
+   signing cert issued by our CA to sign fb.efi & mm.efi like most
+   other distros do. This also now makes our shim builds reproducible
+   like everyone else.
 
  - Above means that our unsigned shim/fb/mm are now produced in a
    custom upload tarball during the build, and are no longer in the

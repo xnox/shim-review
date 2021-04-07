@@ -134,18 +134,18 @@ No, our grub enforces lockdown & uses shim protocol (rhboot linuxefi
 sb patches) to verify next component.
 
 ###### What kernel are you using? Which patches does it includes to enforce Secure Boot?
-linux, various versions. They include lockdown pathces & ACPI patches,
+linux, various versions. They include lockdown patches & ACPI patches,
 lockdown is enforced when booted with SecureBoot, config enforces
 kernel module signatures under lockdown.
 
 ###### What changes were made since your SHIM was last signed?
-All patches dropped, as they were mrged upstream
+All patches dropped, as they were merged upstream
 
- - out of MokListRT mirror size considerations, we have stop using
-   shim ephemeral signing certificate. And instead we use our signing
-   cert issued by our CA to sign fb.efi & mm.efi like most other
-   distros do. This also now makes our shim builds reproducible like
-   everyone else.
+ - out of MokListRT mirror size considerations, we have stopped using
+   shim's ephemeral signing certificate. And instead we use our
+   signing cert issued by our CA to sign fb.efi & mm.efi like most
+   other distros do. This also now makes our shim builds reproducible
+   like everyone else.
 
  - Above means that our unsigned shim/fb/mm are now produced in a
    custom upload tarball during the build, and are no longer in the
