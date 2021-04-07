@@ -220,3 +220,20 @@ rejects kernels for kexec based on MokListXRT including by-cert
 revocation, start signing such kernels with the new signing
 certificate, and replaces all the hashes in the vendor dbx with the
 currently in use certs.
+
+Other changes compared with our previous shim submissions:
+ - out of MokListRT mirror size considerations, we have stop using
+   shim ephemeral signing certificate. And instead we use our signing
+   cert issued by our CA to sign fb.efi & mm.efi like most other
+   distros do. This also now makes our shim builds reproducible like
+   everyone else.
+
+ - we have disabled ExitBootServices check, to allow chainloading a
+   second shim from disk, from netbooted shim+grub. All shims these
+   days require signature validation thus this is safe to do. We need
+   this to support secureboot in https://maas.io which by default
+   netboots & recovers bare metal machines.
+
+ - we have disabled the unacceptable 5s boot delay in fallback when
+   TPM is present, as it impacts bootspeed for the noninteractive
+   cloud instances that have vTPM & SecureBoot.
