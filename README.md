@@ -228,6 +228,11 @@ Other changes compared with our previous shim submissions:
    distros do. This also now makes our shim builds reproducible like
    everyone else.
 
+ - Above means that our unsigned shim/fb/mm are now produced in a
+   custom upload tarball during the build, and are no longer in the
+   shim.deb. As that's how one submits EFI apps for signing in
+   Launchpad.
+
  - we have disabled ExitBootServices check, to allow chainloading a
    second shim from disk, from netbooted shim+grub. All shims these
    days require signature validation thus this is safe to do. We need
