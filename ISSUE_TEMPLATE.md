@@ -167,9 +167,9 @@ All patches dropped, as they were merged upstream
 
 Plain sha256sum, unsigned EFI app:
 ```
-$ sha256sum shim*.efi
-9a73497f75b2a4c55cfd0648f3dbcbb5a16146a8920faa9bb7e4dea495c30d65  shimaa64.efi
-66367b2b6330e8be3654c6ba5e09278f2cf249fc77656f4d3f41f52dbb200fb9  shimx64.efi
+$ sha256sum 15.4-0ubuntu1/shim*.efi
+9a73497f75b2a4c55cfd0648f3dbcbb5a16146a8920faa9bb7e4dea495c30d65  15.4-0ubuntu1/shimaa64.efi
+14bb194ea823cad03da3d79cff93ce96d3aaa910955f19f1816b937e3c7db6eb  15.4-0ubuntu1/shimx64.efi
 ```
 
 Authenticode hashes:
