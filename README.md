@@ -66,6 +66,8 @@ https://code.launchpad.net/~ubuntu-core-dev/shim/+git/shim/+ref/master
 What patches are being applied and why:
 -------------------------------------------------------------------------------
 
+ Patches included in previous submission:
+
   * debian/patches/359.patch: Make fallback boot noninteractive
     without any delays. Currently a 5s delay is present on every boot
     in the cloud with TPM, awaiting user to potentially interrupt and
@@ -73,6 +75,17 @@ What patches are being applied and why:
     we can only realistically support reset after boot entries are
     created to ensure firstboot userspace has correct TPM
     measurements. Submitted as https://github.com/rhboot/shim/pull/359
+
+ New patches since last submission:
+
+ * debian/patches/361.patch: kernel errors / invalid config table
+   flags. Cherrypick of merged https://github.com/rhboot/shim/pull/361
+
+ * debian/patches/362.patch: mokutil --disable-validation does not
+   work. Cherrypick of merged https://github.com/rhboot/shim/pull/362
+
+ * debian/patches/364.patch: fails to boot on older Macs. Cherrypick
+   of merged https://github.com/rhboot/shim/pull/364
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -170,8 +183,8 @@ If the shim binaries can't be reproduced using the provided Dockerfile, please e
 -------------------------------------------------------------------------------
 Ubuntu 21.04 (Hirsute development)
 binutils 2.36.1-6ubuntu1
-gcc-10 10.2.1-24ubuntu1
-libc6-dev 2.33-0ubuntu4
+gcc-10 10.3.0-1ubuntu1
+libc6-dev 2.33-0ubuntu5
 
 To build:
 

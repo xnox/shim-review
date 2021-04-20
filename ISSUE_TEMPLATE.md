@@ -23,7 +23,7 @@ Ubuntu
 ###### the appropriate gnu-efi source.
 ###### Please confirm this as the origin your shim.
 Build is based on shim-15.4.tar.gz2
-It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210407
+It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210421
 
 ###### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 Ubuntu is a popular OS.
@@ -63,7 +63,7 @@ All of the above CVEs are fixed. Grubs that do not have it fixed are revoked by 
 shim, fb, mm:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,1,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.ubuntu,1,Ubuntu,shim,15.4-0ubuntu1,https://www.ubuntu.com/
+shim.ubuntu,1,Ubuntu,shim,15.4-0ubuntu2,https://www.ubuntu.com/
 
 grub:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
@@ -140,42 +140,30 @@ lockdown is enforced when booted with SecureBoot, config enforces
 kernel module signatures under lockdown.
 
 ###### What changes were made since your SHIM was last signed?
-All patches dropped, as they were merged upstream
 
- - out of MokListRT mirror size considerations, we have stopped using
-   shim's ephemeral signing certificate. And instead we use our
-   signing cert issued by our CA to sign fb.efi & mm.efi like most
-   other distros do. This also now makes our shim builds reproducible
-   like everyone else.
+New patches since last submission:
 
- - Above means that our unsigned shim/fb/mm are now produced in a
-   custom upload tarball during the build, and are no longer in the
-   shim.deb. As that's how one submits EFI apps for signing in
-   Launchpad.
+ * debian/patches/361.patch: kernel errors / invalid config table
+   flags. Cherrypick of merged https://github.com/rhboot/shim/pull/361
 
- - we have disabled ExitBootServices check, to allow chainloading a
-   second shim from disk, from netbooted shim+grub. All shims these
-   days require signature validation thus this is safe to do. We need
-   this to support secureboot in https://maas.io which by default
-   netboots & recovers bare metal machines.
+ * debian/patches/362.patch: mokutil --disable-validation does not
+   work. Cherrypick of merged https://github.com/rhboot/shim/pull/362
 
- - we have disabled the unacceptable 5s boot delay in fallback when
-   TPM is present, as it impacts bootspeed for the noninteractive
-   cloud instances that have vTPM & SecureBoot.
-
+ * debian/patches/364.patch: fails to boot on older Macs. Cherrypick
+   of merged https://github.com/rhboot/shim/pull/364
 
 ###### What is the SHA256 hash of your final SHIM binary?
 
 Plain sha256sum, unsigned EFI app:
 ```
-$ sha256sum 15.4-0ubuntu1/shim*.efi
-9a73497f75b2a4c55cfd0648f3dbcbb5a16146a8920faa9bb7e4dea495c30d65  15.4-0ubuntu1/shimaa64.efi
-14bb194ea823cad03da3d79cff93ce96d3aaa910955f19f1816b937e3c7db6eb  15.4-0ubuntu1/shimx64.efi
+$ sha256sum 15.4-0ubuntu2/shim*.efi
+cf5ee9fe83b386aa11f9eee339d11d99d22c4a1dbe21bce93371f36a9d24aa6b  15.4-0ubuntu2/shimaa64.efi
+29be46b65e87e5a3e5bb95173485ddef9759488ea2ca0b2a4b02d0954cedacc5  15.4-0ubuntu2/shimx64.efi
 ```
 
 Authenticode hashes:
 ```
-$ hash-to-efi-sig-list shim*.signed /dev/null
-HASH IS d00757a5bd6771b09f6243746f77b4e78e2ec8e5292a8fbe599b758356eaab22
-HASH IS 6265b732b005b3f330bcd1843374e5ec6ec5aef27cdb97a23daeb8580abbf526
+$ hash-to-efi-sig-list 15.4-0ubuntu2/shimaa64.efi 15.4-0ubuntu2/shimx64.efi /dev/null
+HASH IS 2ecc71fe870a6c046c73f2dce867bcc613748fe5d80591670abac1d839c750bc
+HASH IS d99c93fcb042dbe52707bbde371c75fcf081dd5b0c88a195d44cc57536f6f521
 ```
