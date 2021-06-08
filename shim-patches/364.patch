@@ -1,4 +1,3 @@
-From 8b59591775a0412863aab9596ab87bdd493a9c1e Mon Sep 17 00:00:00 2001
 From: Peter Jones <pjones@redhat.com>
 Date: Sat, 10 Apr 2021 16:05:23 -0400
 Subject: [PATCH] Don't call QueryVariableInfo() on EFI 1.10 machines
@@ -58,6 +57,3 @@ index 9b8fc2b..beac0ff 100644
  	}
  
  	/*
--- 
-2.25.1
-

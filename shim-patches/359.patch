@@ -1,4 +1,3 @@
-From 6701dab6b6d159f2248f87f66082e8c7f48a6f0c Mon Sep 17 00:00:00 2001
 From: Dimitri John Ledkov <xnox@ubuntu.com>
 Date: Tue, 6 Apr 2021 14:58:00 +0100
 Subject: [PATCH] fallback: add compile option FALLBACK_NONINTERACTIVE
@@ -22,7 +21,7 @@ Signed-off-by: Dimitri John Ledkov <xnox@ubuntu.com>
  2 files changed, 8 insertions(+)
 
 diff --git a/Makefile b/Makefile
-index 8c66459c4..d18fad585 100644
+index 8c66459..d18fad5 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -61,6 +61,10 @@ ifneq ($(origin FALLBACK_VERBOSE), undefined)
@@ -37,7 +36,7 @@ index 8c66459c4..d18fad585 100644
  	CFLAGS += -DFALLBACK_VERBOSE_WAIT=$(FALLBACK_VERBOSE_WAIT)
  endif
 diff --git a/fallback.c b/fallback.c
-index 8d89917a5..1f229d23f 100644
+index 8d89917..1f229d2 100644
 --- a/fallback.c
 +++ b/fallback.c
 @@ -1011,6 +1011,7 @@ get_fallback_no_reboot(void)

@@ -143,14 +143,16 @@ kernel module signatures under lockdown.
 
 New patches since last submission:
 
- * debian/patches/361.patch: kernel errors / invalid config table
-   flags. Cherrypick of merged https://github.com/rhboot/shim/pull/361
+ * debian/patches/372.patch: do not fail on out of resources when mirroring
+   on non-secure systems. Cherrypick of https://github.com/rhboot/shim/pull/364
 
- * debian/patches/362.patch: mokutil --disable-validation does not
-   work. Cherrypick of merged https://github.com/rhboot/shim/pull/362
+ * debian/patches/378.patch: Fixes for exiting shim, caused crashes and failure
+   to exit grub and return (it would reboot instead). Cherrypick of
+   https://github.com/rhboot/shim/pull/378
 
- * debian/patches/364.patch: fails to boot on older Macs. Cherrypick
-   of merged https://github.com/rhboot/shim/pull/364
+ * debian/patches/ubuntu-no-addend-vendor-dbx.patch: Stop addending the vendor
+   dbx to the MokListX, ours is too large. Our kernels don't read it anyway,
+   and new ones that will can just embed it themselves.
 
 ###### What is the SHA256 hash of your final SHIM binary?
 
