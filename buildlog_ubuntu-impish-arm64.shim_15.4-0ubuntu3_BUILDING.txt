@@ -1,17 +1,17 @@
-https://launchpad.net/~ubuntu-uefi-team/+archive/ubuntu/ppa/+build/21433248
+https://launchpad.net/~ubuntu-uefi-team/+archive/ubuntu/ppa/+build/21673018
 RUN: /usr/share/launchpad-buildd/bin/builder-prep 
-Kernel version: Linux bos02-arm64-075 4.15.0-142-generic #146-Ubuntu SMP Tue Apr 13 01:08:49 UTC 2021 aarch64
-Buildd toolchain package versions: launchpad-buildd_195~480~ubuntu18.04.1 python3-lpbuildd_195~480~ubuntu18.04.1 sbuild_0.75.0-1ubuntu1 bzr-builder_0.7.3+bzr174~ppa13~ubuntu16.04.1 bzr_2.7.0+bzr6622-10 git-build-recipe_0.3.6~git201906051340.ff11471~ubuntu18.04.1 git_1:2.17.1-1ubuntu0.8 dpkg-dev_1.19.0.5ubuntu2.3 python-debian_0.1.32 python3-debian_0.1.32.
+Kernel version: Linux bos02-arm64-056 4.15.0-144-generic #148-Ubuntu SMP Sat May 8 02:34:06 UTC 2021 aarch64
+Buildd toolchain package versions: launchpad-buildd_196~482~ubuntu18.04.1 python3-lpbuildd_196~482~ubuntu18.04.1 sbuild_0.75.0-1ubuntu1 bzr-builder_0.7.3+bzr174~ppa13~ubuntu16.04.1 bzr_2.7.0+bzr6622-10 git-build-recipe_0.3.6~git201906051340.ff11471~ubuntu18.04.1 git_1:2.17.1-1ubuntu0.8 dpkg-dev_1.19.0.5ubuntu2.3 python-debian_0.1.32 python3-debian_0.1.32.
 Syncing the system clock with the buildd NTP service...
-20 Apr 14:38:47 ntpdate[1703]: adjust time server 10.211.37.1 offset -0.001384 sec
-RUN: /usr/share/launchpad-buildd/bin/in-target unpack-chroot --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248 --image-type chroot /home/buildd/filecache-default/13acc7b09d4f3167554ebdf110d3864ddc7cf889
-Creating target for build PACKAGEBUILD-21433248
-RUN: /usr/share/launchpad-buildd/bin/in-target mount-chroot --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248
-Starting target for build PACKAGEBUILD-21433248
-RUN: /usr/share/launchpad-buildd/bin/in-target override-sources-list --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248 'deb http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu hirsute main' 'deb http://ftpmaster.internal/ubuntu hirsute main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu hirsute-security main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu hirsute-updates main restricted universe multiverse'
-Overriding sources.list in build-PACKAGEBUILD-21433248
-RUN: /usr/share/launchpad-buildd/bin/in-target add-trusted-keys --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248
-Adding trusted keys to build-PACKAGEBUILD-21433248
+ 8 Jun 14:43:32 ntpdate[1713]: adjust time server 10.211.37.1 offset 0.010076 sec
+RUN: /usr/share/launchpad-buildd/bin/in-target unpack-chroot --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018 --image-type chroot /home/buildd/filecache-default/13acc7b09d4f3167554ebdf110d3864ddc7cf889
+Creating target for build PACKAGEBUILD-21673018
+RUN: /usr/share/launchpad-buildd/bin/in-target mount-chroot --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018
+Starting target for build PACKAGEBUILD-21673018
+RUN: /usr/share/launchpad-buildd/bin/in-target override-sources-list --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018 'deb http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu impish main' 'deb http://ftpmaster.internal/ubuntu impish main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu impish-security main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu impish-updates main restricted universe multiverse'
+Overriding sources.list in build-PACKAGEBUILD-21673018
+RUN: /usr/share/launchpad-buildd/bin/in-target add-trusted-keys --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018
+Adding trusted keys to build-PACKAGEBUILD-21673018
 Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
 OK
 Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
@@ -33,76 +33,459 @@ pub   rsa4096 2018-09-17 [SC]
       F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
 uid           [ unknown] Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>
 
-RUN: /usr/share/launchpad-buildd/bin/in-target update-debian-chroot --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248
-Updating target for build PACKAGEBUILD-21433248
-Get:1 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu hirsute InRelease [24.4 kB]
-Get:2 http://ftpmaster.internal/ubuntu hirsute InRelease [269 kB]
-Get:3 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu hirsute/main arm64 Packages [1052 B]
-Get:4 http://ftpmaster.internal/ubuntu hirsute-security InRelease [90.7 kB]
-Get:5 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu hirsute/main Translation-en [560 B]
-Get:6 http://ftpmaster.internal/ubuntu hirsute-updates InRelease [90.7 kB]
-Get:7 http://ftpmaster.internal/ubuntu hirsute/main arm64 Packages [1361 kB]
-Get:8 http://ftpmaster.internal/ubuntu hirsute/main Translation-en [511 kB]
-Get:9 http://ftpmaster.internal/ubuntu hirsute/restricted Translation-en [12.0 kB]
-Get:10 http://ftpmaster.internal/ubuntu hirsute/universe arm64 Packages [12.9 MB]
-Fetched 15.2 MB in 4s (4169 kB/s)
+RUN: /usr/share/launchpad-buildd/bin/in-target update-debian-chroot --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018
+Updating target for build PACKAGEBUILD-21673018
+Get:1 http://ftpmaster.internal/ubuntu impish InRelease [269 kB]
+Get:2 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu impish InRelease [24.4 kB]
+Get:3 http://ftpmaster.internal/ubuntu impish-security InRelease [90.7 kB]
+Get:4 http://ftpmaster.internal/ubuntu impish-updates InRelease [90.7 kB]
+Get:5 http://ftpmaster.internal/ubuntu impish/main arm64 Packages [1383 kB]
+Get:6 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu impish/main arm64 Packages [1068 B]
+Get:7 http://ftpmaster.internal/ubuntu impish/main Translation-en [514 kB]
+Get:8 http://ppa.launchpad.net/ubuntu-uefi-team/ppa/ubuntu impish/main Translation-en [560 B]
+Get:9 http://ftpmaster.internal/ubuntu impish/restricted arm64 Packages [4376 B]
+Get:10 http://ftpmaster.internal/ubuntu impish/restricted Translation-en [14.5 kB]
+Get:11 http://ftpmaster.internal/ubuntu impish/universe arm64 Packages [12.9 MB]
+Get:12 http://ftpmaster.internal/ubuntu impish/universe Translation-en [5464 kB]
+Get:13 http://ftpmaster.internal/ubuntu impish/multiverse arm64 Packages [177 kB]
+Get:14 http://ftpmaster.internal/ubuntu impish/multiverse Translation-en [109 kB]
+Fetched 21.0 MB in 4s (4702 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  base-files dpkg dpkg-dev libdpkg-perl linux-libc-dev
-5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3659 kB of archives.
-After this operation, 21.5 kB of additional disk space will be used.
-Get:1 http://ftpmaster.internal/ubuntu hirsute/main arm64 base-files arm64 11ubuntu19 [60.3 kB]
-Get:2 http://ftpmaster.internal/ubuntu hirsute/main arm64 dpkg arm64 1.20.9ubuntu1 [1248 kB]
-Get:3 http://ftpmaster.internal/ubuntu hirsute/main arm64 dpkg-dev all 1.20.9ubuntu1 [937 kB]
-Get:4 http://ftpmaster.internal/ubuntu hirsute/main arm64 libdpkg-perl all 1.20.9ubuntu1 [232 kB]
-Get:5 http://ftpmaster.internal/ubuntu hirsute/main arm64 linux-libc-dev arm64 5.11.0-16.17 [1181 kB]
+  apt base-files base-passwd bash build-essential cpp cpp-10 dash debconf
+  diffutils dpkg dpkg-dev e2fsprogs g++ g++-10 gcc gcc-10 gcc-10-base
+  gcc-11-base gzip libapparmor1 libapt-pkg6.0 libasan6 libatomic1 libc-bin
+  libc-dev-bin libc6 libc6-dev libcc1-0 libcom-err2 libcrypt-dev libcrypt1
+  libdb5.3 libdevmapper1.02.1 libdpkg-perl libext2fs2 libgcc-10-dev libgcc-s1
+  libgcrypt20 libgnutls30 libgomp1 libgssapi-krb5-2 libhogweed6 libidn2-0
+  libisl23 libitm1 libk5crypto3 libkrb5-3 libkrb5support0 liblsan0 liblz4-1
+  liblzma5 libnettle8 libnsl-dev libnsl2 libpam-modules libpam-modules-bin
+  libpam-runtime libpam0g libprocps8 libreadline8 libss2 libssl1.1
+  libstdc++-10-dev libstdc++6 libsystemd0 libtsan0 libubsan1 libudev1 libzstd1
+  linux-libc-dev logsave lto-disabled-list openssl pinentry-curses procps
+  readline-common systemd systemd-sysv systemd-timesyncd sysvinit-utils
+  usrmerge xz-utils
+83 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 65.0 MB of archives.
+After this operation, 6999 kB disk space will be freed.
+Get:1 http://ftpmaster.internal/ubuntu impish/main arm64 libcrypt-dev arm64 1:4.4.18-4ubuntu1 [109 kB]
+Get:2 http://ftpmaster.internal/ubuntu impish/main arm64 libnsl-dev arm64 1.3.0-2 [65.5 kB]
+Get:3 http://ftpmaster.internal/ubuntu impish/main arm64 libc6-dev arm64 2.33-0ubuntu7 [1720 kB]
+Get:4 http://ftpmaster.internal/ubuntu impish/main arm64 libc-dev-bin arm64 2.33-0ubuntu7 [18.3 kB]
+Get:5 http://ftpmaster.internal/ubuntu impish/main arm64 libcrypt1 arm64 1:4.4.18-4ubuntu1 [78.0 kB]
+Get:6 http://ftpmaster.internal/ubuntu impish/main arm64 libnsl2 arm64 1.3.0-2 [36.3 kB]
+Get:7 http://ftpmaster.internal/ubuntu impish/main arm64 linux-libc-dev arm64 5.11.0-18.19+21.10.1 [1192 kB]
+Get:8 http://ftpmaster.internal/ubuntu impish/main arm64 libasan6 arm64 11.1.0-2ubuntu1 [1977 kB]
+Get:9 http://ftpmaster.internal/ubuntu impish/main arm64 libubsan1 arm64 11.1.0-2ubuntu1 [818 kB]
+Get:10 http://ftpmaster.internal/ubuntu impish/main arm64 libtsan0 arm64 11.1.0-2ubuntu1 [1973 kB]
+Get:11 http://ftpmaster.internal/ubuntu impish/main arm64 liblsan0 arm64 11.1.0-2ubuntu1 [850 kB]
+Get:12 http://ftpmaster.internal/ubuntu impish/main arm64 libitm1 arm64 11.1.0-2ubuntu1 [24.2 kB]
+Get:13 http://ftpmaster.internal/ubuntu impish/main arm64 libgomp1 arm64 11.1.0-2ubuntu1 [98.4 kB]
+Get:14 http://ftpmaster.internal/ubuntu impish/main arm64 gcc-11-base arm64 11.1.0-2ubuntu1 [19.8 kB]
+Get:15 http://ftpmaster.internal/ubuntu impish/main arm64 libgcc-s1 arm64 11.1.0-2ubuntu1 [34.5 kB]
+Get:16 http://ftpmaster.internal/ubuntu impish/main arm64 libcc1-0 arm64 11.1.0-2ubuntu1 [46.3 kB]
+Get:17 http://ftpmaster.internal/ubuntu impish/main arm64 libatomic1 arm64 11.1.0-2ubuntu1 [9840 B]
+Get:18 http://ftpmaster.internal/ubuntu impish/main arm64 libstdc++6 arm64 11.1.0-2ubuntu1 [533 kB]
+Get:19 http://ftpmaster.internal/ubuntu impish/main arm64 libc6 arm64 2.33-0ubuntu7 [2263 kB]
+Get:20 http://ftpmaster.internal/ubuntu impish/main arm64 base-files arm64 11.1ubuntu3 [60.8 kB]
+Get:21 http://ftpmaster.internal/ubuntu impish/main arm64 bash arm64 5.1-3ubuntu1 [682 kB]
+Get:22 http://ftpmaster.internal/ubuntu impish/main arm64 dpkg arm64 1.20.9ubuntu1 [1248 kB]
+Get:23 http://ftpmaster.internal/ubuntu impish/main arm64 debconf all 1.5.76 [121 kB]
+Get:24 http://ftpmaster.internal/ubuntu impish/main arm64 dash arm64 0.5.11+git20210120+802ebd4-1 [83.8 kB]
+Get:25 http://ftpmaster.internal/ubuntu impish/main arm64 diffutils arm64 1:3.7-5ubuntu1 [181 kB]
+Get:26 http://ftpmaster.internal/ubuntu impish/main arm64 gzip arm64 1.10-4ubuntu1 [89.3 kB]
+Get:27 http://ftpmaster.internal/ubuntu impish/main arm64 base-passwd arm64 3.5.50 [46.0 kB]
+Get:28 http://ftpmaster.internal/ubuntu impish/main arm64 libc-bin arm64 2.33-0ubuntu7 [533 kB]
+Get:29 http://ftpmaster.internal/ubuntu impish/main arm64 sysvinit-utils arm64 2.96-7ubuntu1 [19.7 kB]
+Get:30 http://ftpmaster.internal/ubuntu impish/main arm64 libgcrypt20 arm64 1.8.7-5ubuntu1 [358 kB]
+Get:31 http://ftpmaster.internal/ubuntu impish/main arm64 liblz4-1 arm64 1.9.3-2 [49.6 kB]
+Get:32 http://ftpmaster.internal/ubuntu impish/main arm64 liblzma5 arm64 5.2.5-2 [91.2 kB]
+Get:33 http://ftpmaster.internal/ubuntu impish/main arm64 systemd-sysv arm64 248.3-1ubuntu1 [10.3 kB]
+Get:34 http://ftpmaster.internal/ubuntu impish/main arm64 systemd-timesyncd arm64 248.3-1ubuntu1 [27.2 kB]
+Get:35 http://ftpmaster.internal/ubuntu impish/main arm64 libapparmor1 arm64 3.0.0-0ubuntu8 [33.3 kB]
+Get:36 http://ftpmaster.internal/ubuntu impish/main arm64 libnettle8 arm64 3.7.2-3 [154 kB]
+Get:37 http://ftpmaster.internal/ubuntu impish/main arm64 libhogweed6 arm64 3.7.2-3 [191 kB]
+Get:38 http://ftpmaster.internal/ubuntu impish/main arm64 libidn2-0 arm64 2.3.1-1 [50.2 kB]
+Get:39 http://ftpmaster.internal/ubuntu impish/main arm64 libgnutls30 arm64 3.7.1-4ubuntu1 [820 kB]
+Get:40 http://ftpmaster.internal/ubuntu impish/main arm64 libpam0g arm64 1.3.1-5ubuntu7 [54.2 kB]
+Get:41 http://ftpmaster.internal/ubuntu impish/main arm64 systemd arm64 248.3-1ubuntu1 [3801 kB]
+Get:42 http://ftpmaster.internal/ubuntu impish/main arm64 libsystemd0 arm64 248.3-1ubuntu1 [261 kB]
+Get:43 http://ftpmaster.internal/ubuntu impish/main arm64 libudev1 arm64 248.3-1ubuntu1 [66.0 kB]
+Get:44 http://ftpmaster.internal/ubuntu impish/main arm64 libzstd1 arm64 1.4.8+dfsg-2.1 [265 kB]
+Get:45 http://ftpmaster.internal/ubuntu impish/main arm64 libapt-pkg6.0 arm64 2.3.5 [738 kB]
+Get:46 http://ftpmaster.internal/ubuntu impish/main arm64 apt arm64 2.3.5 [1253 kB]
+Get:47 http://ftpmaster.internal/ubuntu impish/main arm64 libpam-modules-bin arm64 1.3.1-5ubuntu7 [38.0 kB]
+Get:48 http://ftpmaster.internal/ubuntu impish/main arm64 libpam-modules arm64 1.3.1-5ubuntu7 [251 kB]
+Get:49 http://ftpmaster.internal/ubuntu impish/main arm64 logsave arm64 1.46.2-1ubuntu2 [11.3 kB]
+Get:50 http://ftpmaster.internal/ubuntu impish/main arm64 libext2fs2 arm64 1.46.2-1ubuntu2 [187 kB]
+Get:51 http://ftpmaster.internal/ubuntu impish/main arm64 e2fsprogs arm64 1.46.2-1ubuntu2 [532 kB]
+Get:52 http://ftpmaster.internal/ubuntu impish/main arm64 libcom-err2 arm64 1.46.2-1ubuntu2 [10.5 kB]
+Get:53 http://ftpmaster.internal/ubuntu impish/main arm64 libdb5.3 arm64 5.3.28+dfsg1-0.8ubuntu1 [613 kB]
+Get:54 http://ftpmaster.internal/ubuntu impish/main arm64 libpam-runtime all 1.3.1-5ubuntu7 [37.3 kB]
+Get:55 http://ftpmaster.internal/ubuntu impish/main arm64 libk5crypto3 arm64 1.18.3-5 [76.7 kB]
+Get:56 http://ftpmaster.internal/ubuntu impish/main arm64 libkrb5support0 arm64 1.18.3-5 [29.2 kB]
+Get:57 http://ftpmaster.internal/ubuntu impish/main arm64 libkrb5-3 arm64 1.18.3-5 [295 kB]
+Get:58 http://ftpmaster.internal/ubuntu impish/main arm64 libgssapi-krb5-2 arm64 1.18.3-5 [120 kB]
+Get:59 http://ftpmaster.internal/ubuntu impish/main arm64 libssl1.1 arm64 1.1.1j-1ubuntu4 [1159 kB]
+Get:60 http://ftpmaster.internal/ubuntu impish/main arm64 libprocps8 arm64 2:3.3.17-5ubuntu2 [30.8 kB]
+Get:61 http://ftpmaster.internal/ubuntu impish/main arm64 libss2 arm64 1.46.2-1ubuntu2 [10.8 kB]
+Get:62 http://ftpmaster.internal/ubuntu impish/main arm64 procps arm64 2:3.3.17-5ubuntu2 [360 kB]
+Get:63 http://ftpmaster.internal/ubuntu impish/main arm64 usrmerge all 25ubuntu1 [53.5 kB]
+Get:64 http://ftpmaster.internal/ubuntu impish/main arm64 libdevmapper1.02.1 arm64 2:1.02.175-2.1ubuntu1 [111 kB]
+Get:65 http://ftpmaster.internal/ubuntu impish/main arm64 readline-common all 8.1-2 [54.1 kB]
+Get:66 http://ftpmaster.internal/ubuntu impish/main arm64 libreadline8 arm64 8.1-2 [129 kB]
+Get:67 http://ftpmaster.internal/ubuntu impish/main arm64 openssl arm64 1.1.1j-1ubuntu4 [600 kB]
+Get:68 http://ftpmaster.internal/ubuntu impish/main arm64 xz-utils arm64 5.2.5-2 [80.2 kB]
+Get:69 http://ftpmaster.internal/ubuntu impish/main arm64 g++-10 arm64 10.3.0-3ubuntu1 [8931 kB]
+Get:70 http://ftpmaster.internal/ubuntu impish/main arm64 gcc-10 arm64 10.3.0-3ubuntu1 [15.8 MB]
+Get:71 http://ftpmaster.internal/ubuntu impish/main arm64 libstdc++-10-dev arm64 10.3.0-3ubuntu1 [1727 kB]
+Get:72 http://ftpmaster.internal/ubuntu impish/main arm64 libgcc-10-dev arm64 10.3.0-3ubuntu1 [910 kB]
+Get:73 http://ftpmaster.internal/ubuntu impish/main arm64 cpp-10 arm64 10.3.0-3ubuntu1 [7785 kB]
+Get:74 http://ftpmaster.internal/ubuntu impish/main arm64 gcc-10-base arm64 10.3.0-3ubuntu1 [20.7 kB]
+Get:75 http://ftpmaster.internal/ubuntu impish/main arm64 libisl23 arm64 0.24-1 [591 kB]
+Get:76 http://ftpmaster.internal/ubuntu impish/main arm64 g++ arm64 4:10.3.0-1ubuntu3 [1592 B]
+Get:77 http://ftpmaster.internal/ubuntu impish/main arm64 gcc arm64 4:10.3.0-1ubuntu3 [5236 B]
+Get:78 http://ftpmaster.internal/ubuntu impish/main arm64 cpp arm64 4:10.3.0-1ubuntu3 [27.7 kB]
+Get:79 http://ftpmaster.internal/ubuntu impish/main arm64 dpkg-dev all 1.20.9ubuntu1 [937 kB]
+Get:80 http://ftpmaster.internal/ubuntu impish/main arm64 libdpkg-perl all 1.20.9ubuntu1 [232 kB]
+Get:81 http://ftpmaster.internal/ubuntu impish/main arm64 lto-disabled-list all 9 [12.1 kB]
+Get:82 http://ftpmaster.internal/ubuntu impish/main arm64 build-essential arm64 12.9ubuntu1 [4740 B]
+Get:83 http://ftpmaster.internal/ubuntu impish/main arm64 pinentry-curses arm64 1.1.1-1 [30.4 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 3659 kB in 0s (39.3 MB/s)
+Fetched 65.0 MB in 1s (59.5 MB/s)
 (Reading database ... 13119 files and directories currently installed.)
-Preparing to unpack .../base-files_11ubuntu19_arm64.deb ...
-Unpacking base-files (11ubuntu19) over (11ubuntu18) ...
-Setting up base-files (11ubuntu19) ...
+Preparing to unpack .../libcrypt-dev_1%3a4.4.18-4ubuntu1_arm64.deb ...
+Unpacking libcrypt-dev:arm64 (1:4.4.18-4ubuntu1) over (1:4.4.17-1ubuntu3) ...
+Preparing to unpack .../libnsl-dev_1.3.0-2_arm64.deb ...
+Unpacking libnsl-dev:arm64 (1.3.0-2) over (1.3.0-0ubuntu3) ...
+Preparing to unpack .../libc6-dev_2.33-0ubuntu7_arm64.deb ...
+Unpacking libc6-dev:arm64 (2.33-0ubuntu7) over (2.33-0ubuntu5) ...
+Preparing to unpack .../libc-dev-bin_2.33-0ubuntu7_arm64.deb ...
+Unpacking libc-dev-bin (2.33-0ubuntu7) over (2.33-0ubuntu5) ...
+Preparing to unpack .../libcrypt1_1%3a4.4.18-4ubuntu1_arm64.deb ...
+Unpacking libcrypt1:arm64 (1:4.4.18-4ubuntu1) over (1:4.4.17-1ubuntu3) ...
+Setting up libcrypt1:arm64 (1:4.4.18-4ubuntu1) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../libnsl2_1.3.0-2_arm64.deb ...
+Unpacking libnsl2:arm64 (1.3.0-2) over (1.3.0-0ubuntu3) ...
+Setting up libnsl2:arm64 (1.3.0-2) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../0-linux-libc-dev_5.11.0-18.19+21.10.1_arm64.deb ...
+Unpacking linux-libc-dev:arm64 (5.11.0-18.19+21.10.1) over (5.11.0-14.15) ...
+Preparing to unpack .../1-libasan6_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libasan6:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../2-libubsan1_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libubsan1:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../3-libtsan0_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libtsan0:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../4-liblsan0_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking liblsan0:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../5-libitm1_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libitm1:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../6-libgomp1_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libgomp1:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../7-gcc-11-base_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking gcc-11-base:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Setting up gcc-11-base:arm64 (11.1.0-2ubuntu1) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../libgcc-s1_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libgcc-s1:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Setting up libgcc-s1:arm64 (11.1.0-2ubuntu1) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../libcc1-0_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libcc1-0:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../libatomic1_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libatomic1:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Preparing to unpack .../libstdc++6_11.1.0-2ubuntu1_arm64.deb ...
+Unpacking libstdc++6:arm64 (11.1.0-2ubuntu1) over (11-20210417-1ubuntu1) ...
+Setting up libstdc++6:arm64 (11.1.0-2ubuntu1) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../libc6_2.33-0ubuntu7_arm64.deb ...
+Unpacking libc6:arm64 (2.33-0ubuntu7) over (2.33-0ubuntu5) ...
+Setting up libc6:arm64 (2.33-0ubuntu7) ...
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../base-files_11.1ubuntu3_arm64.deb ...
+Unpacking base-files (11.1ubuntu3) over (11ubuntu18) ...
+Setting up base-files (11.1ubuntu3) ...
+Installing new version of config file /etc/debian_version ...
+Installing new version of config file /etc/dpkg/origins/debian ...
 Installing new version of config file /etc/issue ...
 Installing new version of config file /etc/issue.net ...
 Installing new version of config file /etc/lsb-release ...
+Updating /etc/profile to current default.
+(Reading database ... 13119 files and directories currently installed.)
+Preparing to unpack .../bash_5.1-3ubuntu1_arm64.deb ...
+Unpacking bash (5.1-3ubuntu1) over (5.1-2ubuntu1) ...
+Setting up bash (5.1-3ubuntu1) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode
 (Reading database ... 13119 files and directories currently installed.)
 Preparing to unpack .../dpkg_1.20.9ubuntu1_arm64.deb ...
 Unpacking dpkg (1.20.9ubuntu1) over (1.20.7.1ubuntu4) ...
 Setting up dpkg (1.20.9ubuntu1) ...
 (Reading database ... 13124 files and directories currently installed.)
-Preparing to unpack .../dpkg-dev_1.20.9ubuntu1_all.deb ...
+Preparing to unpack .../debconf_1.5.76_all.deb ...
+Unpacking debconf (1.5.76) over (1.5.74) ...
+Setting up debconf (1.5.76) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../dash_0.5.11+git20210120+802ebd4-1_arm64.deb ...
+Unpacking dash (0.5.11+git20210120+802ebd4-1) over (0.5.11+git20200708+dd9ef66+really0.5.11+git20200708+dd9ef66-5ubuntu1) ...
+Setting up dash (0.5.11+git20210120+802ebd4-1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../diffutils_1%3a3.7-5ubuntu1_arm64.deb ...
+Unpacking diffutils (1:3.7-5ubuntu1) over (1:3.7-3ubuntu1) ...
+Setting up diffutils (1:3.7-5ubuntu1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../gzip_1.10-4ubuntu1_arm64.deb ...
+Unpacking gzip (1.10-4ubuntu1) over (1.10-2ubuntu3) ...
+Setting up gzip (1.10-4ubuntu1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../base-passwd_3.5.50_arm64.deb ...
+Unpacking base-passwd (3.5.50) over (3.5.49) ...
+Setting up base-passwd (3.5.50) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libc-bin_2.33-0ubuntu7_arm64.deb ...
+Unpacking libc-bin (2.33-0ubuntu7) over (2.33-0ubuntu5) ...
+Setting up libc-bin (2.33-0ubuntu7) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../sysvinit-utils_2.96-7ubuntu1_arm64.deb ...
+Unpacking sysvinit-utils (2.96-7ubuntu1) over (2.96-6ubuntu1) ...
+Setting up sysvinit-utils (2.96-7ubuntu1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libgcrypt20_1.8.7-5ubuntu1_arm64.deb ...
+Unpacking libgcrypt20:arm64 (1.8.7-5ubuntu1) over (1.8.7-2ubuntu2) ...
+Setting up libgcrypt20:arm64 (1.8.7-5ubuntu1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../liblz4-1_1.9.3-2_arm64.deb ...
+Unpacking liblz4-1:arm64 (1.9.3-2) over (1.9.3-1build1) ...
+Setting up liblz4-1:arm64 (1.9.3-2) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../liblzma5_5.2.5-2_arm64.deb ...
+Unpacking liblzma5:arm64 (5.2.5-2) over (5.2.5-1.0build2) ...
+Setting up liblzma5:arm64 (5.2.5-2) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../systemd-sysv_248.3-1ubuntu1_arm64.deb ...
+Unpacking systemd-sysv (248.3-1ubuntu1) over (247.3-3ubuntu3) ...
+Preparing to unpack .../systemd-timesyncd_248.3-1ubuntu1_arm64.deb ...
+Unpacking systemd-timesyncd (248.3-1ubuntu1) over (247.3-3ubuntu3) ...
+Preparing to unpack .../libapparmor1_3.0.0-0ubuntu8_arm64.deb ...
+Unpacking libapparmor1:arm64 (3.0.0-0ubuntu8) over (3.0.0-0ubuntu7) ...
+Preparing to unpack .../libnettle8_3.7.2-3_arm64.deb ...
+Unpacking libnettle8:arm64 (3.7.2-3) over (3.7-2.1ubuntu1) ...
+Setting up libnettle8:arm64 (3.7.2-3) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libhogweed6_3.7.2-3_arm64.deb ...
+Unpacking libhogweed6:arm64 (3.7.2-3) over (3.7-2.1ubuntu1) ...
+Setting up libhogweed6:arm64 (3.7.2-3) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libidn2-0_2.3.1-1_arm64.deb ...
+Unpacking libidn2-0:arm64 (2.3.1-1) over (2.3.0-5) ...
+Setting up libidn2-0:arm64 (2.3.1-1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libgnutls30_3.7.1-4ubuntu1_arm64.deb ...
+Unpacking libgnutls30:arm64 (3.7.1-4ubuntu1) over (3.7.1-3ubuntu1) ...
+Setting up libgnutls30:arm64 (3.7.1-4ubuntu1) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../libpam0g_1.3.1-5ubuntu7_arm64.deb ...
+Unpacking libpam0g:arm64 (1.3.1-5ubuntu7) over (1.3.1-5ubuntu6) ...
+Setting up libpam0g:arm64 (1.3.1-5ubuntu7) ...
+(Reading database ... 13124 files and directories currently installed.)
+Preparing to unpack .../systemd_248.3-1ubuntu1_arm64.deb ...
+Unpacking systemd (248.3-1ubuntu1) over (247.3-3ubuntu3) ...
+Preparing to unpack .../libsystemd0_248.3-1ubuntu1_arm64.deb ...
+Unpacking libsystemd0:arm64 (248.3-1ubuntu1) over (247.3-3ubuntu3) ...
+Setting up libsystemd0:arm64 (248.3-1ubuntu1) ...
+(Reading database ... 13138 files and directories currently installed.)
+Preparing to unpack .../libudev1_248.3-1ubuntu1_arm64.deb ...
+Unpacking libudev1:arm64 (248.3-1ubuntu1) over (247.3-3ubuntu3) ...
+Setting up libudev1:arm64 (248.3-1ubuntu1) ...
+(Reading database ... 13138 files and directories currently installed.)
+Preparing to unpack .../libzstd1_1.4.8+dfsg-2.1_arm64.deb ...
+Unpacking libzstd1:arm64 (1.4.8+dfsg-2.1) over (1.4.8+dfsg-2build2) ...
+Setting up libzstd1:arm64 (1.4.8+dfsg-2.1) ...
+(Reading database ... 13138 files and directories currently installed.)
+Preparing to unpack .../libapt-pkg6.0_2.3.5_arm64.deb ...
+Unpacking libapt-pkg6.0:arm64 (2.3.5) over (2.2.3) ...
+Setting up libapt-pkg6.0:arm64 (2.3.5) ...
+(Reading database ... 13138 files and directories currently installed.)
+Preparing to unpack .../archives/apt_2.3.5_arm64.deb ...
+Unpacking apt (2.3.5) over (2.2.3) ...
+Setting up apt (2.3.5) ...
+(Reading database ... 13138 files and directories currently installed.)
+Preparing to unpack .../libpam-modules-bin_1.3.1-5ubuntu7_arm64.deb ...
+Unpacking libpam-modules-bin (1.3.1-5ubuntu7) over (1.3.1-5ubuntu6) ...
+Setting up libpam-modules-bin (1.3.1-5ubuntu7) ...
+(Reading database ... 13140 files and directories currently installed.)
+Preparing to unpack .../libpam-modules_1.3.1-5ubuntu7_arm64.deb ...
+Unpacking libpam-modules:arm64 (1.3.1-5ubuntu7) over (1.3.1-5ubuntu6) ...
+Setting up libpam-modules:arm64 (1.3.1-5ubuntu7) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../logsave_1.46.2-1ubuntu2_arm64.deb ...
+Unpacking logsave (1.46.2-1ubuntu2) over (1.45.7-1ubuntu2) ...
+Preparing to unpack .../libext2fs2_1.46.2-1ubuntu2_arm64.deb ...
+Unpacking libext2fs2:arm64 (1.46.2-1ubuntu2) over (1.45.7-1ubuntu2) ...
+Setting up libext2fs2:arm64 (1.46.2-1ubuntu2) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../e2fsprogs_1.46.2-1ubuntu2_arm64.deb ...
+Unpacking e2fsprogs (1.46.2-1ubuntu2) over (1.45.7-1ubuntu2) ...
+Preparing to unpack .../libcom-err2_1.46.2-1ubuntu2_arm64.deb ...
+Unpacking libcom-err2:arm64 (1.46.2-1ubuntu2) over (1.45.7-1ubuntu2) ...
+Setting up libcom-err2:arm64 (1.46.2-1ubuntu2) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libdb5.3_5.3.28+dfsg1-0.8ubuntu1_arm64.deb ...
+Unpacking libdb5.3:arm64 (5.3.28+dfsg1-0.8ubuntu1) over (5.3.28+dfsg1-0.6ubuntu4) ...
+Setting up libdb5.3:arm64 (5.3.28+dfsg1-0.8ubuntu1) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libpam-runtime_1.3.1-5ubuntu7_all.deb ...
+Unpacking libpam-runtime (1.3.1-5ubuntu7) over (1.3.1-5ubuntu6) ...
+Setting up libpam-runtime (1.3.1-5ubuntu7) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libk5crypto3_1.18.3-5_arm64.deb ...
+Unpacking libk5crypto3:arm64 (1.18.3-5) over (1.18.3-4) ...
+Setting up libk5crypto3:arm64 (1.18.3-5) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libkrb5support0_1.18.3-5_arm64.deb ...
+Unpacking libkrb5support0:arm64 (1.18.3-5) over (1.18.3-4) ...
+Setting up libkrb5support0:arm64 (1.18.3-5) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libkrb5-3_1.18.3-5_arm64.deb ...
+Unpacking libkrb5-3:arm64 (1.18.3-5) over (1.18.3-4) ...
+Setting up libkrb5-3:arm64 (1.18.3-5) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libgssapi-krb5-2_1.18.3-5_arm64.deb ...
+Unpacking libgssapi-krb5-2:arm64 (1.18.3-5) over (1.18.3-4) ...
+Setting up libgssapi-krb5-2:arm64 (1.18.3-5) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../libssl1.1_1.1.1j-1ubuntu4_arm64.deb ...
+Unpacking libssl1.1:arm64 (1.1.1j-1ubuntu4) over (1.1.1j-1ubuntu3) ...
+Setting up libssl1.1:arm64 (1.1.1j-1ubuntu4) ...
+(Reading database ... 13144 files and directories currently installed.)
+Preparing to unpack .../00-libprocps8_2%3a3.3.17-5ubuntu2_arm64.deb ...
+Unpacking libprocps8:arm64 (2:3.3.17-5ubuntu2) over (2:3.3.16-5ubuntu3) ...
+Preparing to unpack .../01-libss2_1.46.2-1ubuntu2_arm64.deb ...
+Unpacking libss2:arm64 (1.46.2-1ubuntu2) over (1.45.7-1ubuntu2) ...
+Preparing to unpack .../02-procps_2%3a3.3.17-5ubuntu2_arm64.deb ...
+Unpacking procps (2:3.3.17-5ubuntu2) over (2:3.3.16-5ubuntu3) ...
+Preparing to unpack .../03-usrmerge_25ubuntu1_all.deb ...
+Unpacking usrmerge (25ubuntu1) over (24ubuntu3) ...
+Preparing to unpack .../04-libdevmapper1.02.1_2%3a1.02.175-2.1ubuntu1_arm64.deb ...
+Unpacking libdevmapper1.02.1:arm64 (2:1.02.175-2.1ubuntu1) over (2:1.02.175-2ubuntu4) ...
+Preparing to unpack .../05-readline-common_8.1-2_all.deb ...
+Unpacking readline-common (8.1-2) over (8.1-1) ...
+Preparing to unpack .../06-libreadline8_8.1-2_arm64.deb ...
+Unpacking libreadline8:arm64 (8.1-2) over (8.1-1) ...
+Preparing to unpack .../07-openssl_1.1.1j-1ubuntu4_arm64.deb ...
+Unpacking openssl (1.1.1j-1ubuntu4) over (1.1.1j-1ubuntu3) ...
+Preparing to unpack .../08-xz-utils_5.2.5-2_arm64.deb ...
+Unpacking xz-utils (5.2.5-2) over (5.2.5-1.0build2) ...
+Preparing to unpack .../09-g++-10_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking g++-10 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../10-gcc-10_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking gcc-10 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../11-libstdc++-10-dev_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking libstdc++-10-dev:arm64 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../12-libgcc-10-dev_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking libgcc-10-dev:arm64 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../13-cpp-10_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking cpp-10 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../14-gcc-10-base_10.3.0-3ubuntu1_arm64.deb ...
+Unpacking gcc-10-base:arm64 (10.3.0-3ubuntu1) over (10.3.0-1ubuntu1) ...
+Preparing to unpack .../15-libisl23_0.24-1_arm64.deb ...
+Unpacking libisl23:arm64 (0.24-1) over (0.23-1build1) ...
+Preparing to unpack .../16-g++_4%3a10.3.0-1ubuntu3_arm64.deb ...
+Unpacking g++ (4:10.3.0-1ubuntu3) over (4:10.3.0-1ubuntu1) ...
+Preparing to unpack .../17-gcc_4%3a10.3.0-1ubuntu3_arm64.deb ...
+Unpacking gcc (4:10.3.0-1ubuntu3) over (4:10.3.0-1ubuntu1) ...
+Preparing to unpack .../18-cpp_4%3a10.3.0-1ubuntu3_arm64.deb ...
+Unpacking cpp (4:10.3.0-1ubuntu3) over (4:10.3.0-1ubuntu1) ...
+Preparing to unpack .../19-dpkg-dev_1.20.9ubuntu1_all.deb ...
 Unpacking dpkg-dev (1.20.9ubuntu1) over (1.20.7.1ubuntu4) ...
-Preparing to unpack .../libdpkg-perl_1.20.9ubuntu1_all.deb ...
+Preparing to unpack .../20-libdpkg-perl_1.20.9ubuntu1_all.deb ...
 Unpacking libdpkg-perl (1.20.9ubuntu1) over (1.20.7.1ubuntu4) ...
-Preparing to unpack .../linux-libc-dev_5.11.0-16.17_arm64.deb ...
-Unpacking linux-libc-dev:arm64 (5.11.0-16.17) over (5.11.0-14.15) ...
-Setting up linux-libc-dev:arm64 (5.11.0-16.17) ...
+Preparing to unpack .../21-lto-disabled-list_9_all.deb ...
+Unpacking lto-disabled-list (9) over (7) ...
+Preparing to unpack .../22-build-essential_12.9ubuntu1_arm64.deb ...
+Unpacking build-essential (12.9ubuntu1) over (12.8ubuntu3) ...
+Preparing to unpack .../23-pinentry-curses_1.1.1-1_arm64.deb ...
+Unpacking pinentry-curses (1.1.1-1) over (1.1.0-4build1) ...
+Setting up pinentry-curses (1.1.1-1) ...
+Setting up lto-disabled-list (9) ...
+Setting up libapparmor1:arm64 (3.0.0-0ubuntu8) ...
+Setting up linux-libc-dev:arm64 (5.11.0-18.19+21.10.1) ...
+Setting up libgomp1:arm64 (11.1.0-2ubuntu1) ...
+Setting up libasan6:arm64 (11.1.0-2ubuntu1) ...
+Setting up gcc-10-base:arm64 (10.3.0-3ubuntu1) ...
+Setting up xz-utils (5.2.5-2) ...
+Setting up libatomic1:arm64 (11.1.0-2ubuntu1) ...
+Setting up usrmerge (25ubuntu1) ...
+Setting up libss2:arm64 (1.46.2-1ubuntu2) ...
 Setting up libdpkg-perl (1.20.9ubuntu1) ...
+Setting up logsave (1.46.2-1ubuntu2) ...
+Setting up libubsan1:arm64 (11.1.0-2ubuntu1) ...
+Setting up libdevmapper1.02.1:arm64 (2:1.02.175-2.1ubuntu1) ...
+Setting up libnsl-dev:arm64 (1.3.0-2) ...
+Setting up libcrypt-dev:arm64 (1:4.4.18-4ubuntu1) ...
+Setting up libisl23:arm64 (0.24-1) ...
+Setting up libc-dev-bin (2.33-0ubuntu7) ...
+Setting up openssl (1.1.1j-1ubuntu4) ...
+Setting up readline-common (8.1-2) ...
+Setting up libcc1-0:arm64 (11.1.0-2ubuntu1) ...
+Setting up liblsan0:arm64 (11.1.0-2ubuntu1) ...
+Setting up libprocps8:arm64 (2:3.3.17-5ubuntu2) ...
+Setting up cpp-10 (10.3.0-3ubuntu1) ...
+Setting up libitm1:arm64 (11.1.0-2ubuntu1) ...
+Setting up libtsan0:arm64 (11.1.0-2ubuntu1) ...
+Setting up libgcc-10-dev:arm64 (10.3.0-3ubuntu1) ...
+Setting up libreadline8:arm64 (8.1-2) ...
+Setting up e2fsprogs (1.46.2-1ubuntu2) ...
 Setting up dpkg-dev (1.20.9ubuntu1) ...
-RUN: /usr/share/launchpad-buildd/bin/sbuild-package PACKAGEBUILD-21433248 arm64 hirsute -c chroot:build-PACKAGEBUILD-21433248 --arch=arm64 --dist=hirsute --nolog shim_15.4-0ubuntu2.dsc
-Initiating build PACKAGEBUILD-21433248 with 4 jobs across 4 processor cores.
-Kernel reported to sbuild: 4.15.0-142-generic #146-Ubuntu SMP Tue Apr 13 01:08:49 UTC 2021 aarch64
-sbuild (Debian sbuild) 0.75.0 (21 Mar 2018) on bos02-arm64-075.buildd
+Setting up gcc-10 (10.3.0-3ubuntu1) ...
+Setting up cpp (4:10.3.0-1ubuntu3) ...
+Setting up procps (2:3.3.17-5ubuntu2) ...
+update-alternatives: warning: alternative /usr/bin/w.procps (part of link group w) doesn't exist; removing from list of alternatives
+update-alternatives: warning: /etc/alternatives/w is dangling; it will be updated with best choice
+Setting up libc6-dev:arm64 (2.33-0ubuntu7) ...
+Setting up libstdc++-10-dev:arm64 (10.3.0-3ubuntu1) ...
+Setting up g++-10 (10.3.0-3ubuntu1) ...
+Setting up gcc (4:10.3.0-1ubuntu3) ...
+Setting up g++ (4:10.3.0-1ubuntu3) ...
+Setting up build-essential (12.9ubuntu1) ...
+Setting up systemd-timesyncd (248.3-1ubuntu1) ...
+Installing new version of config file /etc/systemd/timesyncd.conf ...
+Setting up systemd (248.3-1ubuntu1) ...
+Installing new version of config file /etc/systemd/journald.conf ...
+Installing new version of config file /etc/systemd/logind.conf ...
+Installing new version of config file /etc/systemd/networkd.conf ...
+Installing new version of config file /etc/systemd/pstore.conf ...
+Installing new version of config file /etc/systemd/resolved.conf ...
+Installing new version of config file /etc/systemd/sleep.conf ...
+Installing new version of config file /etc/systemd/system.conf ...
+Installing new version of config file /etc/systemd/user.conf ...
+Initializing machine ID from random generator.
+Setting up systemd-sysv (248.3-1ubuntu1) ...
+Processing triggers for libc-bin (2.33-0ubuntu7) ...
+RUN: /usr/share/launchpad-buildd/bin/sbuild-package PACKAGEBUILD-21673018 arm64 impish -c chroot:build-PACKAGEBUILD-21673018 --arch=arm64 --dist=impish --nolog shim_15.4-0ubuntu3.dsc
+Initiating build PACKAGEBUILD-21673018 with 4 jobs across 4 processor cores.
+Kernel reported to sbuild: 4.15.0-144-generic #148-Ubuntu SMP Sat May 8 02:34:06 UTC 2021 aarch64
+sbuild (Debian sbuild) 0.75.0 (21 Mar 2018) on bos02-arm64-056.buildd
 
 +==============================================================================+
-| shim 15.4-0ubuntu2 (arm64)                   Tue, 20 Apr 2021 14:39:05 +0000 |
+| shim 15.4-0ubuntu3 (arm64)                   Tue, 08 Jun 2021 14:44:11 +0000 |
 +==============================================================================+
 
 Package: shim
-Version: 15.4-0ubuntu2
-Source Version: 15.4-0ubuntu2
-Distribution: hirsute
+Version: 15.4-0ubuntu3
+Source Version: 15.4-0ubuntu3
+Distribution: impish
 Machine Architecture: arm64
 Host Architecture: arm64
 Build Architecture: arm64
 Build Type: any
 
-I: NOTICE: Log filtering will replace 'home/buildd/build-PACKAGEBUILD-21433248/chroot-autobuild' with '<<CHROOT>>'
+I: NOTICE: Log filtering will replace 'home/buildd/build-PACKAGEBUILD-21673018/chroot-autobuild' with '<<CHROOT>>'
 
 +------------------------------------------------------------------------------+
 | Fetch source files                                                           |
@@ -112,9 +495,9 @@ I: NOTICE: Log filtering will replace 'home/buildd/build-PACKAGEBUILD-21433248/c
 Local sources
 -------------
 
-shim_15.4-0ubuntu2.dsc exists in .; copying to chroot
-I: NOTICE: Log filtering will replace 'build/shim-BLYeHn/shim-15.4' with '<<PKGBUILDDIR>>'
-I: NOTICE: Log filtering will replace 'build/shim-BLYeHn' with '<<BUILDDIR>>'
+shim_15.4-0ubuntu3.dsc exists in .; copying to chroot
+I: NOTICE: Log filtering will replace 'build/shim-2PI57H/shim-15.4' with '<<PKGBUILDDIR>>'
+I: NOTICE: Log filtering will replace 'build/shim-2PI57H' with '<<BUILDDIR>>'
 
 +------------------------------------------------------------------------------+
 | Install build-essential                                                      |
@@ -126,16 +509,16 @@ Setup apt archive
 
 Merged Build-Depends: build-essential, fakeroot
 Filtered Build-Depends: build-essential, fakeroot
-dpkg-deb: building package 'sbuild-build-depends-core-dummy' in '/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive/sbuild-build-depends-core-dummy.deb'.
+dpkg-deb: building package 'sbuild-build-depends-core-dummy' in '/<<BUILDDIR>>/resolver-4M9HY3/apt_archive/sbuild-build-depends-core-dummy.deb'.
 dpkg-scanpackages: warning: Packages in archive but missing from override file:
 dpkg-scanpackages: warning:   sbuild-build-depends-core-dummy
 dpkg-scanpackages: info: Wrote 1 entries to output Packages file.
-Ign:1 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ InRelease
-Get:2 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Release [957 B]
-Ign:3 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Release.gpg
-Get:4 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Sources [349 B]
-Get:5 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Packages [432 B]
-Fetched 1738 B in 0s (76.3 kB/s)
+Ign:1 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ InRelease
+Get:2 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Release [957 B]
+Ign:3 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Release.gpg
+Get:4 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Sources [349 B]
+Get:5 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Packages [434 B]
+Fetched 1740 B in 0s (74.9 kB/s)
 Reading package lists...
 Reading package lists...
 
@@ -149,13 +532,13 @@ Reading state information...
 The following NEW packages will be installed:
   sbuild-build-depends-core-dummy
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 856 B of archives.
+Need to get 852 B of archives.
 After this operation, 0 B of additional disk space will be used.
-Get:1 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ sbuild-build-depends-core-dummy 0.invalid.0 [856 B]
+Get:1 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ sbuild-build-depends-core-dummy 0.invalid.0 [852 B]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 856 B in 0s (0 B/s)
+Fetched 852 B in 0s (0 B/s)
 Selecting previously unselected package sbuild-build-depends-core-dummy.
-(Reading database ... 13126 files and directories currently installed.)
+(Reading database ... 13207 files and directories currently installed.)
 Preparing to unpack .../sbuild-build-depends-core-dummy_0.invalid.0_arm64.deb ...
 Unpacking sbuild-build-depends-core-dummy (0.invalid.0) ...
 Setting up sbuild-build-depends-core-dummy (0.invalid.0) ...
@@ -176,16 +559,16 @@ Setup apt archive
 
 Merged Build-Depends: debhelper-compat (= 12), libelf-dev, dos2unix, dh-buildinfo, xxd
 Filtered Build-Depends: debhelper-compat (= 12), libelf-dev, dos2unix, dh-buildinfo, xxd
-dpkg-deb: building package 'sbuild-build-depends-shim-dummy' in '/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive/sbuild-build-depends-shim-dummy.deb'.
+dpkg-deb: building package 'sbuild-build-depends-shim-dummy' in '/<<BUILDDIR>>/resolver-4M9HY3/apt_archive/sbuild-build-depends-shim-dummy.deb'.
 dpkg-scanpackages: warning: Packages in archive but missing from override file:
 dpkg-scanpackages: warning:   sbuild-build-depends-core-dummy sbuild-build-depends-shim-dummy
 dpkg-scanpackages: info: Wrote 2 entries to output Packages file.
-Ign:1 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ InRelease
-Get:2 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Release [963 B]
-Ign:3 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Release.gpg
-Get:4 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Sources [512 B]
-Get:5 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ Packages [595 B]
-Fetched 2070 B in 0s (89.0 kB/s)
+Ign:1 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ InRelease
+Get:2 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Release [963 B]
+Ign:3 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Release.gpg
+Get:4 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Sources [512 B]
+Get:5 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ Packages [595 B]
+Fetched 2070 B in 0s (80.7 kB/s)
 Reading package lists...
 Reading package lists...
 
@@ -222,48 +605,48 @@ The following NEW packages will be installed:
 0 upgraded, 38 newly installed, 0 to remove and 0 not upgraded.
 Need to get 16.4 MB of archives.
 After this operation, 65.7 MB of additional disk space will be used.
-Get:1 copy:/<<BUILDDIR>>/resolver-iRQ3Ar/apt_archive ./ sbuild-build-depends-shim-dummy 0.invalid.0 [888 B]
-Get:2 http://ftpmaster.internal/ubuntu hirsute/main arm64 bsdextrautils arm64 2.36.1-7ubuntu2 [77.7 kB]
-Get:3 http://ftpmaster.internal/ubuntu hirsute/main arm64 libuchardet0 arm64 0.0.7-1 [68.0 kB]
-Get:4 http://ftpmaster.internal/ubuntu hirsute/main arm64 groff-base arm64 1.22.4-6 [809 kB]
-Get:5 http://ftpmaster.internal/ubuntu hirsute/main arm64 libpipeline1 arm64 1.5.3-1 [26.1 kB]
-Get:6 http://ftpmaster.internal/ubuntu hirsute/main arm64 man-db arm64 2.9.4-2 [1136 kB]
-Get:7 http://ftpmaster.internal/ubuntu hirsute/main arm64 libelf1 arm64 0.183-8 [45.1 kB]
-Get:8 http://ftpmaster.internal/ubuntu hirsute/main arm64 libicu67 arm64 67.1-6ubuntu2 [8456 kB]
-Get:9 http://ftpmaster.internal/ubuntu hirsute/main arm64 libxml2 arm64 2.9.10+dfsg-6.3build2 [618 kB]
-Get:10 http://ftpmaster.internal/ubuntu hirsute/main arm64 xxd arm64 2:8.2.2434-1ubuntu1 [49.4 kB]
-Get:11 http://ftpmaster.internal/ubuntu hirsute/main arm64 libmagic-mgc arm64 1:5.39-3 [228 kB]
-Get:12 http://ftpmaster.internal/ubuntu hirsute/main arm64 libmagic1 arm64 1:5.39-3 [75.1 kB]
-Get:13 http://ftpmaster.internal/ubuntu hirsute/main arm64 file arm64 1:5.39-3 [23.6 kB]
-Get:14 http://ftpmaster.internal/ubuntu hirsute/main arm64 gettext-base arm64 0.21-3ubuntu2 [38.6 kB]
-Get:15 http://ftpmaster.internal/ubuntu hirsute/main arm64 libsigsegv2 arm64 2.13-1ubuntu1 [14.0 kB]
-Get:16 http://ftpmaster.internal/ubuntu hirsute/main arm64 m4 arm64 1.4.18-5 [194 kB]
-Get:17 http://ftpmaster.internal/ubuntu hirsute/main arm64 autoconf all 2.69-14 [293 kB]
-Get:18 http://ftpmaster.internal/ubuntu hirsute/main arm64 autotools-dev all 20180224.1+nmu1 [39.4 kB]
-Get:19 http://ftpmaster.internal/ubuntu hirsute/main arm64 automake all 1:1.16.3-2ubuntu1 [552 kB]
-Get:20 http://ftpmaster.internal/ubuntu hirsute/main arm64 autopoint all 0.21-3ubuntu2 [422 kB]
-Get:21 http://ftpmaster.internal/ubuntu hirsute/main arm64 libdebhelper-perl all 13.3.4ubuntu1 [61.1 kB]
-Get:22 http://ftpmaster.internal/ubuntu hirsute/main arm64 libtool all 2.4.6-15 [161 kB]
-Get:23 http://ftpmaster.internal/ubuntu hirsute/main arm64 dh-autoreconf all 20 [16.1 kB]
-Get:24 http://ftpmaster.internal/ubuntu hirsute/main arm64 libarchive-zip-perl all 1.68-1 [90.2 kB]
-Get:25 http://ftpmaster.internal/ubuntu hirsute/main arm64 libsub-override-perl all 0.09-2 [9532 B]
-Get:26 http://ftpmaster.internal/ubuntu hirsute/main arm64 libfile-stripnondeterminism-perl all 1.11.0-1 [17.0 kB]
-Get:27 http://ftpmaster.internal/ubuntu hirsute/main arm64 dh-strip-nondeterminism all 1.11.0-1 [5236 B]
-Get:28 http://ftpmaster.internal/ubuntu hirsute/main arm64 libdw1 arm64 0.183-8 [207 kB]
-Get:29 http://ftpmaster.internal/ubuntu hirsute/main arm64 debugedit arm64 1:0.1-0ubuntu2 [37.2 kB]
-Get:30 http://ftpmaster.internal/ubuntu hirsute/main arm64 dwz arm64 0.14-1 [89.4 kB]
-Get:31 http://ftpmaster.internal/ubuntu hirsute/main arm64 gettext arm64 0.21-3ubuntu2 [775 kB]
-Get:32 http://ftpmaster.internal/ubuntu hirsute/main arm64 intltool-debian all 0.35.0+20060710.5 [24.9 kB]
-Get:33 http://ftpmaster.internal/ubuntu hirsute/main arm64 po-debconf all 1.0.21+nmu1 [233 kB]
-Get:34 http://ftpmaster.internal/ubuntu hirsute/main arm64 debhelper all 13.3.4ubuntu1 [920 kB]
-Get:35 http://ftpmaster.internal/ubuntu hirsute/universe arm64 dh-buildinfo all 0.11+nmu2 [16.0 kB]
-Get:36 http://ftpmaster.internal/ubuntu hirsute/main arm64 zlib1g-dev arm64 1:1.2.11.dfsg-2ubuntu6 [154 kB]
-Get:37 http://ftpmaster.internal/ubuntu hirsute/main arm64 libelf-dev arm64 0.183-8 [59.1 kB]
-Get:38 http://ftpmaster.internal/ubuntu hirsute/universe arm64 dos2unix arm64 7.4.1-1 [372 kB]
+Get:1 copy:/<<BUILDDIR>>/resolver-4M9HY3/apt_archive ./ sbuild-build-depends-shim-dummy 0.invalid.0 [884 B]
+Get:2 http://ftpmaster.internal/ubuntu impish/main arm64 bsdextrautils arm64 2.36.1-7ubuntu2 [77.7 kB]
+Get:3 http://ftpmaster.internal/ubuntu impish/main arm64 libuchardet0 arm64 0.0.7-1 [68.0 kB]
+Get:4 http://ftpmaster.internal/ubuntu impish/main arm64 groff-base arm64 1.22.4-6 [809 kB]
+Get:5 http://ftpmaster.internal/ubuntu impish/main arm64 libpipeline1 arm64 1.5.3-1 [26.1 kB]
+Get:6 http://ftpmaster.internal/ubuntu impish/main arm64 man-db arm64 2.9.4-2 [1136 kB]
+Get:7 http://ftpmaster.internal/ubuntu impish/main arm64 libelf1 arm64 0.185-1 [45.0 kB]
+Get:8 http://ftpmaster.internal/ubuntu impish/main arm64 libicu67 arm64 67.1-6ubuntu2 [8456 kB]
+Get:9 http://ftpmaster.internal/ubuntu impish/main arm64 libxml2 arm64 2.9.10+dfsg-6.7 [618 kB]
+Get:10 http://ftpmaster.internal/ubuntu impish/main arm64 xxd arm64 2:8.2.2434-3ubuntu1 [48.8 kB]
+Get:11 http://ftpmaster.internal/ubuntu impish/main arm64 libmagic-mgc arm64 1:5.39-3 [228 kB]
+Get:12 http://ftpmaster.internal/ubuntu impish/main arm64 libmagic1 arm64 1:5.39-3 [75.1 kB]
+Get:13 http://ftpmaster.internal/ubuntu impish/main arm64 file arm64 1:5.39-3 [23.6 kB]
+Get:14 http://ftpmaster.internal/ubuntu impish/main arm64 gettext-base arm64 0.21-3ubuntu2 [38.6 kB]
+Get:15 http://ftpmaster.internal/ubuntu impish/main arm64 libsigsegv2 arm64 2.13-1ubuntu1 [14.0 kB]
+Get:16 http://ftpmaster.internal/ubuntu impish/main arm64 m4 arm64 1.4.18-5 [194 kB]
+Get:17 http://ftpmaster.internal/ubuntu impish/main arm64 autoconf all 2.69-14 [293 kB]
+Get:18 http://ftpmaster.internal/ubuntu impish/main arm64 autotools-dev all 20180224.1+nmu1 [39.4 kB]
+Get:19 http://ftpmaster.internal/ubuntu impish/main arm64 automake all 1:1.16.3-2ubuntu1 [552 kB]
+Get:20 http://ftpmaster.internal/ubuntu impish/main arm64 autopoint all 0.21-3ubuntu2 [422 kB]
+Get:21 http://ftpmaster.internal/ubuntu impish/main arm64 libdebhelper-perl all 13.3.4ubuntu1 [61.1 kB]
+Get:22 http://ftpmaster.internal/ubuntu impish/main arm64 libtool all 2.4.6-15 [161 kB]
+Get:23 http://ftpmaster.internal/ubuntu impish/main arm64 dh-autoreconf all 20 [16.1 kB]
+Get:24 http://ftpmaster.internal/ubuntu impish/main arm64 libarchive-zip-perl all 1.68-1 [90.2 kB]
+Get:25 http://ftpmaster.internal/ubuntu impish/main arm64 libsub-override-perl all 0.09-2 [9532 B]
+Get:26 http://ftpmaster.internal/ubuntu impish/main arm64 libfile-stripnondeterminism-perl all 1.12.0-1 [17.5 kB]
+Get:27 http://ftpmaster.internal/ubuntu impish/main arm64 dh-strip-nondeterminism all 1.12.0-1 [5228 B]
+Get:28 http://ftpmaster.internal/ubuntu impish/main arm64 libdw1 arm64 0.185-1 [208 kB]
+Get:29 http://ftpmaster.internal/ubuntu impish/main arm64 debugedit arm64 1:0.2+20210520-0ubuntu1 [41.6 kB]
+Get:30 http://ftpmaster.internal/ubuntu impish/main arm64 dwz arm64 0.14-1 [89.4 kB]
+Get:31 http://ftpmaster.internal/ubuntu impish/main arm64 gettext arm64 0.21-3ubuntu2 [775 kB]
+Get:32 http://ftpmaster.internal/ubuntu impish/main arm64 intltool-debian all 0.35.0+20060710.5 [24.9 kB]
+Get:33 http://ftpmaster.internal/ubuntu impish/main arm64 po-debconf all 1.0.21+nmu1 [233 kB]
+Get:34 http://ftpmaster.internal/ubuntu impish/main arm64 debhelper all 13.3.4ubuntu1 [920 kB]
+Get:35 http://ftpmaster.internal/ubuntu impish/universe arm64 dh-buildinfo all 0.11+nmu2 [16.0 kB]
+Get:36 http://ftpmaster.internal/ubuntu impish/main arm64 zlib1g-dev arm64 1:1.2.11.dfsg-2ubuntu6 [154 kB]
+Get:37 http://ftpmaster.internal/ubuntu impish/main arm64 libelf-dev arm64 0.185-1 [59.2 kB]
+Get:38 http://ftpmaster.internal/ubuntu impish/universe arm64 dos2unix arm64 7.4.1-1 [372 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 16.4 MB in 1s (14.9 MB/s)
+Fetched 16.4 MB in 0s (41.7 MB/s)
 Selecting previously unselected package bsdextrautils.
-(Reading database ... 13126 files and directories currently installed.)
+(Reading database ... 13207 files and directories currently installed.)
 Preparing to unpack .../00-bsdextrautils_2.36.1-7ubuntu2_arm64.deb ...
 Unpacking bsdextrautils (2.36.1-7ubuntu2) ...
 Selecting previously unselected package libuchardet0:arm64.
@@ -279,17 +662,17 @@ Selecting previously unselected package man-db.
 Preparing to unpack .../04-man-db_2.9.4-2_arm64.deb ...
 Unpacking man-db (2.9.4-2) ...
 Selecting previously unselected package libelf1:arm64.
-Preparing to unpack .../05-libelf1_0.183-8_arm64.deb ...
-Unpacking libelf1:arm64 (0.183-8) ...
+Preparing to unpack .../05-libelf1_0.185-1_arm64.deb ...
+Unpacking libelf1:arm64 (0.185-1) ...
 Selecting previously unselected package libicu67:arm64.
 Preparing to unpack .../06-libicu67_67.1-6ubuntu2_arm64.deb ...
 Unpacking libicu67:arm64 (67.1-6ubuntu2) ...
 Selecting previously unselected package libxml2:arm64.
-Preparing to unpack .../07-libxml2_2.9.10+dfsg-6.3build2_arm64.deb ...
-Unpacking libxml2:arm64 (2.9.10+dfsg-6.3build2) ...
+Preparing to unpack .../07-libxml2_2.9.10+dfsg-6.7_arm64.deb ...
+Unpacking libxml2:arm64 (2.9.10+dfsg-6.7) ...
 Selecting previously unselected package xxd.
-Preparing to unpack .../08-xxd_2%3a8.2.2434-1ubuntu1_arm64.deb ...
-Unpacking xxd (2:8.2.2434-1ubuntu1) ...
+Preparing to unpack .../08-xxd_2%3a8.2.2434-3ubuntu1_arm64.deb ...
+Unpacking xxd (2:8.2.2434-3ubuntu1) ...
 Selecting previously unselected package libmagic-mgc.
 Preparing to unpack .../09-libmagic-mgc_1%3a5.39-3_arm64.deb ...
 Unpacking libmagic-mgc (1:5.39-3) ...
@@ -336,17 +719,17 @@ Selecting previously unselected package libsub-override-perl.
 Preparing to unpack .../23-libsub-override-perl_0.09-2_all.deb ...
 Unpacking libsub-override-perl (0.09-2) ...
 Selecting previously unselected package libfile-stripnondeterminism-perl.
-Preparing to unpack .../24-libfile-stripnondeterminism-perl_1.11.0-1_all.deb ...
-Unpacking libfile-stripnondeterminism-perl (1.11.0-1) ...
+Preparing to unpack .../24-libfile-stripnondeterminism-perl_1.12.0-1_all.deb ...
+Unpacking libfile-stripnondeterminism-perl (1.12.0-1) ...
 Selecting previously unselected package dh-strip-nondeterminism.
-Preparing to unpack .../25-dh-strip-nondeterminism_1.11.0-1_all.deb ...
-Unpacking dh-strip-nondeterminism (1.11.0-1) ...
+Preparing to unpack .../25-dh-strip-nondeterminism_1.12.0-1_all.deb ...
+Unpacking dh-strip-nondeterminism (1.12.0-1) ...
 Selecting previously unselected package libdw1:arm64.
-Preparing to unpack .../26-libdw1_0.183-8_arm64.deb ...
-Unpacking libdw1:arm64 (0.183-8) ...
+Preparing to unpack .../26-libdw1_0.185-1_arm64.deb ...
+Unpacking libdw1:arm64 (0.185-1) ...
 Selecting previously unselected package debugedit.
-Preparing to unpack .../27-debugedit_1%3a0.1-0ubuntu2_arm64.deb ...
-Unpacking debugedit (1:0.1-0ubuntu2) ...
+Preparing to unpack .../27-debugedit_1%3a0.2+20210520-0ubuntu1_arm64.deb ...
+Unpacking debugedit (1:0.2+20210520-0ubuntu1) ...
 Selecting previously unselected package dwz.
 Preparing to unpack .../28-dwz_0.14-1_arm64.deb ...
 Unpacking dwz (0.14-1) ...
@@ -369,8 +752,8 @@ Selecting previously unselected package zlib1g-dev:arm64.
 Preparing to unpack .../34-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu6_arm64.deb ...
 Unpacking zlib1g-dev:arm64 (1:1.2.11.dfsg-2ubuntu6) ...
 Selecting previously unselected package libelf-dev:arm64.
-Preparing to unpack .../35-libelf-dev_0.183-8_arm64.deb ...
-Unpacking libelf-dev:arm64 (0.183-8) ...
+Preparing to unpack .../35-libelf-dev_0.185-1_arm64.deb ...
+Unpacking libelf-dev:arm64 (0.185-1) ...
 Selecting previously unselected package dos2unix.
 Preparing to unpack .../36-dos2unix_7.4.1-1_arm64.deb ...
 Unpacking dos2unix (7.4.1-1) ...
@@ -387,7 +770,7 @@ Setting up libdebhelper-perl (13.3.4ubuntu1) ...
 Setting up libmagic1:arm64 (1:5.39-3) ...
 Setting up gettext-base (0.21-3ubuntu2) ...
 Setting up file (1:5.39-3) ...
-Setting up xxd (2:8.2.2434-1ubuntu1) ...
+Setting up xxd (2:8.2.2434-3ubuntu1) ...
 Setting up autotools-dev (20180224.1+nmu1) ...
 Setting up libsigsegv2:arm64 (2.13-1ubuntu1) ...
 Setting up autopoint (0.21-3ubuntu2) ...
@@ -395,20 +778,20 @@ Setting up zlib1g-dev:arm64 (1:1.2.11.dfsg-2ubuntu6) ...
 Setting up libuchardet0:arm64 (0.0.7-1) ...
 Setting up libsub-override-perl (0.09-2) ...
 Setting up dos2unix (7.4.1-1) ...
-Setting up libelf1:arm64 (0.183-8) ...
-Setting up libxml2:arm64 (2.9.10+dfsg-6.3build2) ...
-Setting up libfile-stripnondeterminism-perl (1.11.0-1) ...
-Setting up libdw1:arm64 (0.183-8) ...
+Setting up libelf1:arm64 (0.185-1) ...
+Setting up libxml2:arm64 (2.9.10+dfsg-6.7) ...
+Setting up libfile-stripnondeterminism-perl (1.12.0-1) ...
+Setting up libdw1:arm64 (0.185-1) ...
 Setting up gettext (0.21-3ubuntu2) ...
 Setting up libtool (2.4.6-15) ...
 Setting up m4 (1.4.18-5) ...
 Setting up intltool-debian (0.35.0+20060710.5) ...
-Setting up libelf-dev:arm64 (0.183-8) ...
+Setting up libelf-dev:arm64 (0.185-1) ...
 Setting up autoconf (2.69-14) ...
-Setting up dh-strip-nondeterminism (1.11.0-1) ...
+Setting up dh-strip-nondeterminism (1.12.0-1) ...
 Setting up dwz (0.14-1) ...
 Setting up groff-base (1.22.4-6) ...
-Setting up debugedit (1:0.1-0ubuntu2) ...
+Setting up debugedit (1:0.2+20210520-0ubuntu1) ...
 Setting up automake (1:1.16.3-2ubuntu1) ...
 update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode
 Setting up po-debconf (1.0.21+nmu1) ...
@@ -419,15 +802,15 @@ Setting up dh-autoreconf (20) ...
 Setting up debhelper (13.3.4ubuntu1) ...
 Setting up dh-buildinfo (0.11+nmu2) ...
 Setting up sbuild-build-depends-shim-dummy (0.invalid.0) ...
-Processing triggers for libc-bin (2.33-0ubuntu5) ...
+Processing triggers for libc-bin (2.33-0ubuntu7) ...
 
 +------------------------------------------------------------------------------+
 | Build environment                                                            |
 +------------------------------------------------------------------------------+
 
-Kernel: Linux 4.15.0-142-generic arm64 (aarch64)
-Toolchain package versions: binutils_2.36.1-6ubuntu1 dpkg-dev_1.20.9ubuntu1 g++-10_10.3.0-1ubuntu1 gcc-10_10.3.0-1ubuntu1 libc6-dev_2.33-0ubuntu5 libstdc++-10-dev_10.3.0-1ubuntu1 libstdc++6_11-20210417-1ubuntu1 linux-libc-dev_5.11.0-16.17
-Package versions: adduser_3.118ubuntu5 advancecomp_2.1-2.1build1 apt_2.2.3 autoconf_2.69-14 automake_1:1.16.3-2ubuntu1 autopoint_0.21-3ubuntu2 autotools-dev_20180224.1+nmu1 base-files_11ubuntu19 base-passwd_3.5.49 bash_5.1-2ubuntu1 binutils_2.36.1-6ubuntu1 binutils-aarch64-linux-gnu_2.36.1-6ubuntu1 binutils-common_2.36.1-6ubuntu1 bsdextrautils_2.36.1-7ubuntu2 bsdutils_1:2.36.1-7ubuntu2 build-essential_12.8ubuntu3 bzip2_1.0.8-4ubuntu3 ca-certificates_20210119build1 coreutils_8.32-4ubuntu2 cpp_4:10.3.0-1ubuntu1 cpp-10_10.3.0-1ubuntu1 dash_0.5.11+git20200708+dd9ef66+really0.5.11+git20200708+dd9ef66-5ubuntu1 debconf_1.5.74 debhelper_13.3.4ubuntu1 debianutils_4.11.2 debugedit_1:0.1-0ubuntu2 dh-autoreconf_20 dh-buildinfo_0.11+nmu2 dh-strip-nondeterminism_1.11.0-1 diffutils_1:3.7-3ubuntu1 dos2unix_7.4.1-1 dpkg_1.20.9ubuntu1 dpkg-dev_1.20.9ubuntu1 dwz_0.14-1 e2fsprogs_1.45.7-1ubuntu2 fakeroot_1.25.3-1.1ubuntu2 file_1:5.39-3 findutils_4.8.0-1ubuntu1 g++_4:10.3.0-1ubuntu1 g++-10_10.3.0-1ubuntu1 gcc_4:10.3.0-1ubuntu1 gcc-10_10.3.0-1ubuntu1 gcc-10-base_10.3.0-1ubuntu1 gcc-11-base_11-20210417-1ubuntu1 gettext_0.21-3ubuntu2 gettext-base_0.21-3ubuntu2 gpg_2.2.20-1ubuntu3 gpg-agent_2.2.20-1ubuntu3 gpgconf_2.2.20-1ubuntu3 gpgv_2.2.20-1ubuntu3 grep_3.6-1 groff-base_1.22.4-6 gzip_1.10-2ubuntu3 hostname_3.23 init_1.60 init-system-helpers_1.60 intltool-debian_0.35.0+20060710.5 libacl1_2.2.53-10ubuntu1 libapparmor1_3.0.0-0ubuntu7 libapt-pkg6.0_2.2.3 libarchive-zip-perl_1.68-1 libargon2-1_0~20171227-0.2build21.04.0 libasan6_11-20210417-1ubuntu1 libassuan0_2.5.4-1ubuntu1 libatomic1_11-20210417-1ubuntu1 libattr1_1:2.4.48-6build1 libaudit-common_1:3.0-2ubuntu1 libaudit1_1:3.0-2ubuntu1 libbinutils_2.36.1-6ubuntu1 libblkid1_2.36.1-7ubuntu2 libbz2-1.0_1.0.8-4ubuntu3 libc-bin_2.33-0ubuntu5 libc-dev-bin_2.33-0ubuntu5 libc6_2.33-0ubuntu5 libc6-dev_2.33-0ubuntu5 libcap-ng0_0.7.9-2.2build1 libcap2_1:2.44-1build1 libcc1-0_11-20210417-1ubuntu1 libcom-err2_1.45.7-1ubuntu2 libcrypt-dev_1:4.4.17-1ubuntu3 libcrypt1_1:4.4.17-1ubuntu3 libcryptsetup12_2:2.3.4-1ubuntu3 libctf-nobfd0_2.36.1-6ubuntu1 libctf0_2.36.1-6ubuntu1 libdb5.3_5.3.28+dfsg1-0.6ubuntu4 libdebconfclient0_0.256ubuntu3 libdebhelper-perl_13.3.4ubuntu1 libdevmapper1.02.1_2:1.02.175-2ubuntu4 libdpkg-perl_1.20.9ubuntu1 libdw1_0.183-8 libelf-dev_0.183-8 libelf1_0.183-8 libext2fs2_1.45.7-1ubuntu2 libfakeroot_1.25.3-1.1ubuntu2 libffi8ubuntu1_3.4~20200819gead65ca871-0ubuntu5 libfile-stripnondeterminism-perl_1.11.0-1 libgcc-10-dev_10.3.0-1ubuntu1 libgcc-s1_11-20210417-1ubuntu1 libgcrypt20_1.8.7-2ubuntu2 libgdbm-compat4_1.19-2 libgdbm6_1.19-2 libgmp10_2:6.2.1+dfsg-1ubuntu2 libgnutls30_3.7.1-3ubuntu1 libgomp1_11-20210417-1ubuntu1 libgpg-error0_1.38-2build1 libgssapi-krb5-2_1.18.3-4 libhogweed6_3.7-2.1ubuntu1 libicu67_67.1-6ubuntu2 libidn2-0_2.3.0-5 libip4tc2_1.8.7-1ubuntu2 libisl23_0.23-1build1 libitm1_11-20210417-1ubuntu1 libjson-c5_0.15-2build2 libk5crypto3_1.18.3-4 libkeyutils1_1.6.1-2ubuntu1 libkmod2_28-1ubuntu2 libkrb5-3_1.18.3-4 libkrb5support0_1.18.3-4 liblockfile-bin_1.17-1 liblockfile1_1.17-1 liblsan0_11-20210417-1ubuntu1 liblz4-1_1.9.3-1build1 liblzma5_5.2.5-1.0build2 libmagic-mgc_1:5.39-3 libmagic1_1:5.39-3 libmount1_2.36.1-7ubuntu2 libmpc3_1.2.0-1build1 libmpfr6_4.1.0-3build1 libncurses6_6.2+20201114-2build1 libncursesw6_6.2+20201114-2build1 libnettle8_3.7-2.1ubuntu1 libnpth0_1.6-3 libnsl-dev_1.3.0-0ubuntu3 libnsl2_1.3.0-0ubuntu3 libp11-kit0_0.23.22-1 libpam-modules_1.3.1-5ubuntu6 libpam-modules-bin_1.3.1-5ubuntu6 libpam-runtime_1.3.1-5ubuntu6 libpam0g_1.3.1-5ubuntu6 libpcre2-8-0_10.36-2ubuntu5 libpcre3_2:8.39-13build3 libperl5.32_5.32.1-3ubuntu2 libpipeline1_1.5.3-1 libpng16-16_1.6.37-3build3 libprocps8_2:3.3.16-5ubuntu3 libreadline8_8.1-1 libseccomp2_2.5.1-1ubuntu1 libselinux1_3.1-3build1 libsemanage-common_3.1-1ubuntu1 libsemanage1_3.1-1ubuntu1 libsepol1_3.1-1ubuntu1 libsigsegv2_2.13-1ubuntu1 libsmartcols1_2.36.1-7ubuntu2 libsqlite3-0_3.34.1-3 libss2_1.45.7-1ubuntu2 libssl1.1_1.1.1j-1ubuntu3 libstdc++-10-dev_10.3.0-1ubuntu1 libstdc++6_11-20210417-1ubuntu1 libsub-override-perl_0.09-2 libsystemd0_247.3-3ubuntu3 libtasn1-6_4.16.0-2 libtinfo6_6.2+20201114-2build1 libtirpc-common_1.3.1-1build1 libtirpc-dev_1.3.1-1build1 libtirpc3_1.3.1-1build1 libtool_2.4.6-15 libtsan0_11-20210417-1ubuntu1 libubsan1_11-20210417-1ubuntu1 libuchardet0_0.0.7-1 libudev1_247.3-3ubuntu3 libunistring2_0.9.10-4 libuuid1_2.36.1-7ubuntu2 libxml2_2.9.10+dfsg-6.3build2 libxxhash0_0.8.0-2 libzstd1_1.4.8+dfsg-2build2 linux-libc-dev_5.11.0-16.17 lockfile-progs_0.1.18 login_1:4.8.1-1ubuntu8 logsave_1.45.7-1ubuntu2 lsb-base_11.1.0ubuntu2 lto-disabled-list_7 m4_1.4.18-5 make_4.3-4ubuntu1 man-db_2.9.4-2 mawk_1.3.4.20200120-2 mount_2.36.1-7ubuntu2 ncurses-base_6.2+20201114-2build1 ncurses-bin_6.2+20201114-2build1 openssl_1.1.1j-1ubuntu3 optipng_0.7.7-1 passwd_1:4.8.1-1ubuntu8 patch_2.7.6-7 perl_5.32.1-3ubuntu2 perl-base_5.32.1-3ubuntu2 perl-modules-5.32_5.32.1-3ubuntu2 pinentry-curses_1.1.0-4build1 pkgbinarymangler_147 po-debconf_1.0.21+nmu1 policyrcd-script-zg2_0.1-3 procps_2:3.3.16-5ubuntu3 readline-common_8.1-1 rpcsvc-proto_1.4.2-0ubuntu4 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-shim-dummy_0.invalid.0 sed_4.7-1ubuntu1 sensible-utils_0.0.14 systemd_247.3-3ubuntu3 systemd-sysv_247.3-3ubuntu3 systemd-timesyncd_247.3-3ubuntu3 sysvinit-utils_2.96-6ubuntu1 tar_1.34+dfsg-1build1 tzdata_2021a-1ubuntu1 ubuntu-keyring_2021.03.26 usrmerge_24ubuntu3 util-linux_2.36.1-7ubuntu2 xxd_2:8.2.2434-1ubuntu1 xz-utils_5.2.5-1.0build2 zlib1g_1:1.2.11.dfsg-2ubuntu6 zlib1g-dev_1:1.2.11.dfsg-2ubuntu6
+Kernel: Linux 4.15.0-144-generic arm64 (aarch64)
+Toolchain package versions: binutils_2.36.1-6ubuntu1 dpkg-dev_1.20.9ubuntu1 g++-10_10.3.0-3ubuntu1 gcc-10_10.3.0-3ubuntu1 libc6-dev_2.33-0ubuntu7 libstdc++-10-dev_10.3.0-3ubuntu1 libstdc++6_11.1.0-2ubuntu1 linux-libc-dev_5.11.0-18.19+21.10.1
+Package versions: adduser_3.118ubuntu5 advancecomp_2.1-2.1build1 apt_2.3.5 autoconf_2.69-14 automake_1:1.16.3-2ubuntu1 autopoint_0.21-3ubuntu2 autotools-dev_20180224.1+nmu1 base-files_11.1ubuntu3 base-passwd_3.5.50 bash_5.1-3ubuntu1 binutils_2.36.1-6ubuntu1 binutils-aarch64-linux-gnu_2.36.1-6ubuntu1 binutils-common_2.36.1-6ubuntu1 bsdextrautils_2.36.1-7ubuntu2 bsdutils_1:2.36.1-7ubuntu2 build-essential_12.9ubuntu1 bzip2_1.0.8-4ubuntu3 ca-certificates_20210119build1 coreutils_8.32-4ubuntu2 cpp_4:10.3.0-1ubuntu3 cpp-10_10.3.0-3ubuntu1 dash_0.5.11+git20210120+802ebd4-1 debconf_1.5.76 debhelper_13.3.4ubuntu1 debianutils_4.11.2 debugedit_1:0.2+20210520-0ubuntu1 dh-autoreconf_20 dh-buildinfo_0.11+nmu2 dh-strip-nondeterminism_1.12.0-1 diffutils_1:3.7-5ubuntu1 dos2unix_7.4.1-1 dpkg_1.20.9ubuntu1 dpkg-dev_1.20.9ubuntu1 dwz_0.14-1 e2fsprogs_1.46.2-1ubuntu2 fakeroot_1.25.3-1.1ubuntu2 file_1:5.39-3 findutils_4.8.0-1ubuntu1 g++_4:10.3.0-1ubuntu3 g++-10_10.3.0-3ubuntu1 gcc_4:10.3.0-1ubuntu3 gcc-10_10.3.0-3ubuntu1 gcc-10-base_10.3.0-3ubuntu1 gcc-11-base_11.1.0-2ubuntu1 gettext_0.21-3ubuntu2 gettext-base_0.21-3ubuntu2 gpg_2.2.20-1ubuntu3 gpg-agent_2.2.20-1ubuntu3 gpgconf_2.2.20-1ubuntu3 gpgv_2.2.20-1ubuntu3 grep_3.6-1 groff-base_1.22.4-6 gzip_1.10-4ubuntu1 hostname_3.23 init_1.60 init-system-helpers_1.60 intltool-debian_0.35.0+20060710.5 libacl1_2.2.53-10ubuntu1 libapparmor1_3.0.0-0ubuntu8 libapt-pkg6.0_2.3.5 libarchive-zip-perl_1.68-1 libargon2-1_0~20171227-0.2build21.04.0 libasan6_11.1.0-2ubuntu1 libassuan0_2.5.4-1ubuntu1 libatomic1_11.1.0-2ubuntu1 libattr1_1:2.4.48-6build1 libaudit-common_1:3.0-2ubuntu1 libaudit1_1:3.0-2ubuntu1 libbinutils_2.36.1-6ubuntu1 libblkid1_2.36.1-7ubuntu2 libbz2-1.0_1.0.8-4ubuntu3 libc-bin_2.33-0ubuntu7 libc-dev-bin_2.33-0ubuntu7 libc6_2.33-0ubuntu7 libc6-dev_2.33-0ubuntu7 libcap-ng0_0.7.9-2.2build1 libcap2_1:2.44-1build1 libcc1-0_11.1.0-2ubuntu1 libcom-err2_1.46.2-1ubuntu2 libcrypt-dev_1:4.4.18-4ubuntu1 libcrypt1_1:4.4.18-4ubuntu1 libcryptsetup12_2:2.3.4-1ubuntu3 libctf-nobfd0_2.36.1-6ubuntu1 libctf0_2.36.1-6ubuntu1 libdb5.3_5.3.28+dfsg1-0.8ubuntu1 libdebconfclient0_0.256ubuntu3 libdebhelper-perl_13.3.4ubuntu1 libdevmapper1.02.1_2:1.02.175-2.1ubuntu1 libdpkg-perl_1.20.9ubuntu1 libdw1_0.185-1 libelf-dev_0.185-1 libelf1_0.185-1 libext2fs2_1.46.2-1ubuntu2 libfakeroot_1.25.3-1.1ubuntu2 libffi8ubuntu1_3.4~20200819gead65ca871-0ubuntu5 libfile-stripnondeterminism-perl_1.12.0-1 libgcc-10-dev_10.3.0-3ubuntu1 libgcc-s1_11.1.0-2ubuntu1 libgcrypt20_1.8.7-5ubuntu1 libgdbm-compat4_1.19-2 libgdbm6_1.19-2 libgmp10_2:6.2.1+dfsg-1ubuntu2 libgnutls30_3.7.1-4ubuntu1 libgomp1_11.1.0-2ubuntu1 libgpg-error0_1.38-2build1 libgssapi-krb5-2_1.18.3-5 libhogweed6_3.7.2-3 libicu67_67.1-6ubuntu2 libidn2-0_2.3.1-1 libip4tc2_1.8.7-1ubuntu2 libisl23_0.24-1 libitm1_11.1.0-2ubuntu1 libjson-c5_0.15-2build2 libk5crypto3_1.18.3-5 libkeyutils1_1.6.1-2ubuntu1 libkmod2_28-1ubuntu2 libkrb5-3_1.18.3-5 libkrb5support0_1.18.3-5 liblockfile-bin_1.17-1 liblockfile1_1.17-1 liblsan0_11.1.0-2ubuntu1 liblz4-1_1.9.3-2 liblzma5_5.2.5-2 libmagic-mgc_1:5.39-3 libmagic1_1:5.39-3 libmount1_2.36.1-7ubuntu2 libmpc3_1.2.0-1build1 libmpfr6_4.1.0-3build1 libncurses6_6.2+20201114-2build1 libncursesw6_6.2+20201114-2build1 libnettle8_3.7.2-3 libnpth0_1.6-3 libnsl-dev_1.3.0-2 libnsl2_1.3.0-2 libp11-kit0_0.23.22-1 libpam-modules_1.3.1-5ubuntu7 libpam-modules-bin_1.3.1-5ubuntu7 libpam-runtime_1.3.1-5ubuntu7 libpam0g_1.3.1-5ubuntu7 libpcre2-8-0_10.36-2ubuntu5 libpcre3_2:8.39-13build3 libperl5.32_5.32.1-3ubuntu2 libpipeline1_1.5.3-1 libpng16-16_1.6.37-3build3 libprocps8_2:3.3.17-5ubuntu2 libreadline8_8.1-2 libseccomp2_2.5.1-1ubuntu1 libselinux1_3.1-3build1 libsemanage-common_3.1-1ubuntu1 libsemanage1_3.1-1ubuntu1 libsepol1_3.1-1ubuntu1 libsigsegv2_2.13-1ubuntu1 libsmartcols1_2.36.1-7ubuntu2 libsqlite3-0_3.34.1-3 libss2_1.46.2-1ubuntu2 libssl1.1_1.1.1j-1ubuntu4 libstdc++-10-dev_10.3.0-3ubuntu1 libstdc++6_11.1.0-2ubuntu1 libsub-override-perl_0.09-2 libsystemd0_248.3-1ubuntu1 libtasn1-6_4.16.0-2 libtinfo6_6.2+20201114-2build1 libtirpc-common_1.3.1-1build1 libtirpc-dev_1.3.1-1build1 libtirpc3_1.3.1-1build1 libtool_2.4.6-15 libtsan0_11.1.0-2ubuntu1 libubsan1_11.1.0-2ubuntu1 libuchardet0_0.0.7-1 libudev1_248.3-1ubuntu1 libunistring2_0.9.10-4 libuuid1_2.36.1-7ubuntu2 libxml2_2.9.10+dfsg-6.7 libxxhash0_0.8.0-2 libzstd1_1.4.8+dfsg-2.1 linux-libc-dev_5.11.0-18.19+21.10.1 lockfile-progs_0.1.18 login_1:4.8.1-1ubuntu8 logsave_1.46.2-1ubuntu2 lsb-base_11.1.0ubuntu2 lto-disabled-list_9 m4_1.4.18-5 make_4.3-4ubuntu1 man-db_2.9.4-2 mawk_1.3.4.20200120-2 mount_2.36.1-7ubuntu2 ncurses-base_6.2+20201114-2build1 ncurses-bin_6.2+20201114-2build1 openssl_1.1.1j-1ubuntu4 optipng_0.7.7-1 passwd_1:4.8.1-1ubuntu8 patch_2.7.6-7 perl_5.32.1-3ubuntu2 perl-base_5.32.1-3ubuntu2 perl-modules-5.32_5.32.1-3ubuntu2 pinentry-curses_1.1.1-1 pkgbinarymangler_147 po-debconf_1.0.21+nmu1 policyrcd-script-zg2_0.1-3 procps_2:3.3.17-5ubuntu2 readline-common_8.1-2 rpcsvc-proto_1.4.2-0ubuntu4 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-shim-dummy_0.invalid.0 sed_4.7-1ubuntu1 sensible-utils_0.0.14 systemd_248.3-1ubuntu1 systemd-sysv_248.3-1ubuntu1 systemd-timesyncd_248.3-1ubuntu1 sysvinit-utils_2.96-7ubuntu1 tar_1.34+dfsg-1build1 tzdata_2021a-1ubuntu1 ubuntu-keyring_2021.03.26 usrmerge_25ubuntu1 util-linux_2.36.1-7ubuntu2 xxd_2:8.2.2434-3ubuntu1 xz-utils_5.2.5-2 zlib1g_1:1.2.11.dfsg-2ubuntu6 zlib1g-dev_1:1.2.11.dfsg-2ubuntu6
 
 +------------------------------------------------------------------------------+
 | Build                                                                        |
@@ -437,18 +820,22 @@ Package versions: adduser_3.118ubuntu5 advancecomp_2.1-2.1build1 apt_2.2.3 autoc
 Unpack source
 -------------
 
-gpgv: Signature made Tue Apr 20 14:37:10 2021 UTC
-gpgv:                using RSA key EE240A052A231AD8925841D79B8EC849D5EF70ED
+gpgv: Signature made Tue Jun  8 14:42:39 2021 UTC
+gpgv:                using RSA key 4FB588A84C2DDE79A74C77876FA458DD1DB03F71
+gpgv:                issuer "juliank@ubuntu.com"
 gpgv: Can't check signature: No public key
-dpkg-source: warning: failed to verify signature on ./shim_15.4-0ubuntu2.dsc
+dpkg-source: warning: failed to verify signature on ./shim_15.4-0ubuntu3.dsc
 dpkg-source: info: extracting shim in /<<PKGBUILDDIR>>
 dpkg-source: info: unpacking shim_15.4.orig.tar.bz2
-dpkg-source: info: unpacking shim_15.4-0ubuntu2.debian.tar.xz
+dpkg-source: info: unpacking shim_15.4-0ubuntu3.debian.tar.xz
 dpkg-source: info: using patch list from debian/patches/series
 dpkg-source: info: applying 359.patch
 dpkg-source: info: applying 361.patch
 dpkg-source: info: applying 362.patch
 dpkg-source: info: applying 364.patch
+dpkg-source: info: applying ubuntu-no-addend-vendor-dbx.patch
+dpkg-source: info: applying 372.patch
+dpkg-source: info: applying 378.patch
 
 Check disk space
 ----------------
@@ -465,12 +852,12 @@ LANG=C.UTF-8
 LC_ALL=C.UTF-8
 LOGNAME=buildd
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-SCHROOT_ALIAS_NAME=build-PACKAGEBUILD-21433248
-SCHROOT_CHROOT_NAME=build-PACKAGEBUILD-21433248
+SCHROOT_ALIAS_NAME=build-PACKAGEBUILD-21673018
+SCHROOT_CHROOT_NAME=build-PACKAGEBUILD-21673018
 SCHROOT_COMMAND=env
 SCHROOT_GID=2501
 SCHROOT_GROUP=buildd
-SCHROOT_SESSION_ID=build-PACKAGEBUILD-21433248
+SCHROOT_SESSION_ID=build-PACKAGEBUILD-21673018
 SCHROOT_UID=2001
 SCHROOT_USER=buildd
 SHELL=/bin/sh
@@ -482,8 +869,8 @@ dpkg-buildpackage
 -----------------
 
 dpkg-buildpackage: info: source package shim
-dpkg-buildpackage: info: source version 15.4-0ubuntu2
-dpkg-buildpackage: info: source distribution hirsute
+dpkg-buildpackage: info: source version 15.4-0ubuntu3
+dpkg-buildpackage: info: source distribution impish
  dpkg-source --before-build .
 dpkg-buildpackage: info: host architecture arm64
  fakeroot debian/rules clean
@@ -523,7 +910,7 @@ dh build-arch --with buildinfo
    dh_auto_configure -a
    debian/rules override_dh_auto_build
 make[1]: Entering directory '/<<PKGBUILDDIR>>'
-sed -e "s/@DEB_VERSION@/15.4-0ubuntu2/g" \
+sed -e "s/@DEB_VERSION@/15.4-0ubuntu3/g" \
 	<debian/sbat.ubuntu.csv.in \
 	>data/sbat.ubuntu.csv
 dh_auto_build -- RELEASE=15 COMMIT_ID=20e4d9486fcae54ee44d2323ae342ffe68c920e6 MAKELEVEL=0 FALLBACK_NONINTERACTIVE=1 VENDOR_CERT_FILE=debian/canonical-uefi-ca.der VENDOR_DBX_FILE=debian/canonical-2021_arm64.esl EFIDIR=ubuntu DISABLE_EBS_PROTECTION=1 
@@ -1105,7 +1492,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=72 if=/dev/zero of=shimaa64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 0.000158999 s, 25.2 kB/s
+4 bytes copied, 0.000217194 s, 18.4 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame -j .sbat \
@@ -1142,7 +1529,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=72 if=/dev/zero of=mmaa64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 0.000176349 s, 22.7 kB/s
+4 bytes copied, 0.000187 s, 21.4 kB/s
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame \
@@ -1152,7 +1539,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=72 if=/dev/zero of=fbaa64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 0.000171874 s, 23.3 kB/s
+4 bytes copied, 0.00018505 s, 21.6 kB/s
 make: Leaving directory '/<<PKGBUILDDIR>>'
 make[1]: Leaving directory '/<<PKGBUILDDIR>>'
    dh_auto_test -a
@@ -1163,7 +1550,7 @@ make[2]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule
 dd if=/dev/urandom bs=512 count=17 of=random.bin
 17+0 records in
 17+0 records out
-8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000447498 s, 19.5 MB/s
+8704 bytes (8.7 kB, 8.5 KiB) copied, 0.000527804 s, 16.5 MB/s
 xxd -i random.bin test-random.h
 gcc -O2 -ggdb -std=gnu11 -isystem /<<PKGBUILDDIR>>/include/system -I/<<PKGBUILDDIR>>/gnu-efi/inc -I/<<PKGBUILDDIR>>/gnu-efi/inc/aarch64 -I/<<PKGBUILDDIR>>/gnu-efi/inc/protocol -Iinclude -iquote . -fshort-wchar -flto -fno-builtin -Wall -Wextra -Wsign-compare -Wno-deprecated-declarations -Wno-pointer-sign -Wno-unused -Werror -Werror=nonnull -Werror=nonnull-compare  -DEFI_FUNCTION_WRAPPER -DGNU_EFI_USE_MS_ABI -DPAGE_SIZE=4096 -DSHIM_UNIT_TEST "-DDEFAULT_DEBUG_PRINT_STATE=0" -o test-csv test.c test-csv.c csv.c 
 ./test-csv
@@ -1184,7 +1571,7 @@ test_csv_2: passed
 running test_simple_sbat_csv
 test_simple_sbat_csv: passed
 running test_csv_simple_fuzz
-parsed 103 entries
+parsed 109 entries
 test_csv_simple_fuzz: passed
 running test_csv_simple_fuzz
 parsed 4 entries
@@ -1306,7 +1693,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 dd conv=notrunc bs=1 count=4 seek=72 if=/dev/zero of=shimaa64.efi
 4+0 records in
 4+0 records out
-4 bytes copied, 0.000163624 s, 24.4 kB/s
+4 bytes copied, 0.00017978 s, 22.2 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .reloc -j .eh_frame -j .sbat \
@@ -1327,6 +1714,10 @@ find /<<PKGBUILDDIR>> -type f -a '(' -iname '*.c' -o -iname '*.h' -o -iname '*.S
 	install --strip-program=true -d -m 0755 /<<PKGBUILDDIR>>/debian/tmp//usr/src/debug//shim-15.4-15/$(dirname ${outfile}) ; \
 	install --strip-program=true -m 0644 ${file} /<<PKGBUILDDIR>>/debian/tmp//usr/src/debug//shim-15.4-15/${outfile} ; \
 done
+install: WARNING: ignoring --strip-program option as -s option was not specified
+install: WARNING: ignoring --strip-program option as -s option was not specified
+install: WARNING: ignoring --strip-program option as -s option was not specified
+install: WARNING: ignoring --strip-program option as -s option was not specified
 install: WARNING: ignoring --strip-program option as -s option was not specified
 install: WARNING: ignoring --strip-program option as -s option was not specified
 install: WARNING: ignoring --strip-program option as -s option was not specified
@@ -3011,12 +3402,12 @@ dh_shlibdeps -X.efi
 make[1]: Leaving directory '/<<PKGBUILDDIR>>'
    dh_installdeb -a
    dh_gencontrol -a
-dpkg-gencontrol: warning: Depends field of package shim: substitution variable ${shlibs:Depends} used, but is not defined
 dpkg-gencontrol: warning: Depends field of package shim-dbg: substitution variable ${shlibs:Depends} used, but is not defined
+dpkg-gencontrol: warning: Depends field of package shim: substitution variable ${shlibs:Depends} used, but is not defined
    dh_md5sums -a
    debian/rules override_dh_builddeb
 make[1]: Entering directory '/<<PKGBUILDDIR>>'
-dh_builddeb
+dh_builddeb -- -Zxz
 INFO: pkgstriptranslations version 147
 INFO: pkgstriptranslations version 147
 INFO: Disabling pkgstriptranslations for PPA build
@@ -3024,31 +3415,31 @@ INFO: Disabling pkgstriptranslations for PPA build
 INFO: Disabling pkgmaintainermangler for PPA build
 INFO: Disabling pkgmaintainermangler for PPA build
 INFO: Disabling pkgstripfiles for PPA build
-dpkg-deb: building package 'shim' in '../shim_15.4-0ubuntu2_arm64.deb'.
 INFO: Disabling pkgstripfiles for PPA build
-dpkg-deb: building package 'shim-dbg' in '../shim-dbg_15.4-0ubuntu2_arm64.deb'.
-mkdir -p debian/shim-15.4-0ubuntu2-signing//15.4-0ubuntu2/control
-echo 'tarball' >debian/shim-15.4-0ubuntu2-signing//15.4-0ubuntu2/control/options
+dpkg-deb: building package 'shim' in '../shim_15.4-0ubuntu3_arm64.deb'.
+dpkg-deb: building package 'shim-dbg' in '../shim-dbg_15.4-0ubuntu3_arm64.deb'.
+mkdir -p debian/shim-15.4-0ubuntu3-signing//15.4-0ubuntu3/control
+echo 'tarball' >debian/shim-15.4-0ubuntu3-signing//15.4-0ubuntu3/control/options
 chmod a-x debian/tmp/boot/efi/EFI/*/*.efi
-cp debian/tmp/boot/efi/EFI/ubuntu/*.efi debian/shim-15.4-0ubuntu2-signing//15.4-0ubuntu2/
-cp debian/tmp/boot/efi/EFI/BOOT/*.efi debian/shim-15.4-0ubuntu2-signing//15.4-0ubuntu2/
-tar -C debian/shim-15.4-0ubuntu2-signing/ -czvf /<<PKGBUILDDIR>>/../shim_15.4-0ubuntu2_arm64.tar.gz .
+cp debian/tmp/boot/efi/EFI/ubuntu/*.efi debian/shim-15.4-0ubuntu3-signing//15.4-0ubuntu3/
+cp debian/tmp/boot/efi/EFI/BOOT/*.efi debian/shim-15.4-0ubuntu3-signing//15.4-0ubuntu3/
+tar -C debian/shim-15.4-0ubuntu3-signing/ -czvf /<<PKGBUILDDIR>>/../shim_15.4-0ubuntu3_arm64.tar.gz .
 ./
-./15.4-0ubuntu2/
-./15.4-0ubuntu2/fbaa64.efi
-./15.4-0ubuntu2/control/
-./15.4-0ubuntu2/control/options
-./15.4-0ubuntu2/shimaa64.efi
-./15.4-0ubuntu2/mmaa64.efi
-dpkg-distaddfile shim_15.4-0ubuntu2_arm64.tar.gz raw-signing -
+./15.4-0ubuntu3/
+./15.4-0ubuntu3/fbaa64.efi
+./15.4-0ubuntu3/control/
+./15.4-0ubuntu3/control/options
+./15.4-0ubuntu3/mmaa64.efi
+./15.4-0ubuntu3/shimaa64.efi
+dpkg-distaddfile shim_15.4-0ubuntu3_arm64.tar.gz raw-signing -
 make[1]: Leaving directory '/<<PKGBUILDDIR>>'
  dpkg-genbuildinfo --build=any
- dpkg-genchanges --build=any -mLaunchpad Build Daemon <buildd@bos02-arm64-075.buildd> >../shim_15.4-0ubuntu2_arm64.changes
+ dpkg-genchanges --build=any -mLaunchpad Build Daemon <buildd@bos02-arm64-056.buildd> >../shim_15.4-0ubuntu3_arm64.changes
 dpkg-genchanges: info: binary-only arch-specific upload (source code and arch-indep packages not included)
  dpkg-source --after-build .
 dpkg-buildpackage: info: binary-only upload (no source included)
 --------------------------------------------------------------------------------
-Build finished at 2021-04-20T14:40:29Z
+Build finished at 2021-06-08T14:45:36Z
 
 Finished
 --------
@@ -3065,48 +3456,56 @@ I: Built successfully
 +------------------------------------------------------------------------------+
 
 
-shim_15.4-0ubuntu2_arm64.changes:
+shim_15.4-0ubuntu3_arm64.changes:
 ---------------------------------
 
 Format: 1.8
-Date: Tue, 20 Apr 2021 15:24:29 +0100
+Date: Tue, 08 Jun 2021 16:42:17 +0200
 Source: shim
 Binary: shim shim-dbg
 Built-For-Profiles: noudeb
 Architecture: arm64
-Version: 15.4-0ubuntu2
-Distribution: hirsute
+Version: 15.4-0ubuntu3
+Distribution: impish
 Urgency: medium
-Maintainer: Launchpad Build Daemon <buildd@bos02-arm64-075.buildd>
-Changed-By: Dimitri John Ledkov <xnox@ubuntu.com>
+Maintainer: Launchpad Build Daemon <buildd@bos02-arm64-056.buildd>
+Changed-By: Julian Andres Klode <juliank@ubuntu.com>
 Description:
  shim       - boot loader to chain-load signed boot loaders under Secure Boot
  shim-dbg   - boot loader to chain-load signed boot loaders under Secure Boot (
-Launchpad-Bugs-Fixed: 1925010 1925139 1925140
+Launchpad-Bugs-Fixed: 1924605 1925673 1928434 1931136
 Changes:
- shim (15.4-0ubuntu2) hirsute; urgency=medium
+ shim (15.4-0ubuntu3) impish; urgency=medium
  .
-   [ Balint Reczey ]
-   * Fix boot on EFI 1.10 machines, for example on some MacBooks (LP: #1925010)
+   [ Steve Langasek ]
+   * Use -Zxz compression, for compatibility with dpkg in older releases.
+     LP: #1925673
  .
-   [ Dimitri John Ledkov ]
-   * Fix kernel warning when allocating MOK table (LP: #1925139)
-   * Fix booting with shim SBState disabled (LP: #1925140)
+   [ Julian Andres Klode ]
+   * Stop addending vendor dbx to MokListXRT during MokListX mirroring. This
+     is causing systems to run out of EFI storage space, or just hang up
+     when trying to write it (LP: #1924605) (LP: #1928434)
+   * Further relax the check for variable mirroring on non-secureboot systems
+     avoiding boot failures on out of space conditons (pull request #372)
+ .
+   [ Seth Forshee ]
+   * Don't unhook ExitBootServices() when EBS protection is disabled (LP: #1931136)
+     (pull request #378)
 Checksums-Sha1:
- 862cceb41de57ce068c90b8027352f40a0b2bdd6 12080 shim-dbg_15.4-0ubuntu2_arm64.deb
- 271bbba6247972fcfec35a26378feed4266ed581 6204 shim_15.4-0ubuntu2_arm64.buildinfo
- a1c42abd21f84034f49346cea900722bfc7a5d17 11980 shim_15.4-0ubuntu2_arm64.deb
- f82358123ce49af0b54d3a4e49b7310f74a25130 638200 shim_15.4-0ubuntu2_arm64.tar.gz
+ 737a117852ab7bd65b5aede7b09b994623e9076b 12396 shim-dbg_15.4-0ubuntu3_arm64.deb
+ 2871141b4361517568ed15041d0000ad1903d1aa 6075 shim_15.4-0ubuntu3_arm64.buildinfo
+ 2a13ad2d6b90e2d3f84f05db71691a9c5252ff6b 12296 shim_15.4-0ubuntu3_arm64.deb
+ 931855cc48f28d662a02a407cc4966da4eefba65 638398 shim_15.4-0ubuntu3_arm64.tar.gz
 Checksums-Sha256:
- 317ac847ff0241db043adbfba6aa14195035e7ca1dbb729138b9efb0cd487274 12080 shim-dbg_15.4-0ubuntu2_arm64.deb
- dcc935c057160b4a2e344ae5c8e032b7d9ea35e5af4d9aed6cd95492af932da0 6204 shim_15.4-0ubuntu2_arm64.buildinfo
- 92472b2533ff8c019df3ca767bba8b032c4c55d7dfe846e0ab1d97fd5ce52430 11980 shim_15.4-0ubuntu2_arm64.deb
- 9312db3b7355f2a96307551a4d1a29b6bc6da6c4826f6341640770dfe48fa7da 638200 shim_15.4-0ubuntu2_arm64.tar.gz
+ def6f6eabe8977190dfaca234d110b69cd415df4d32253b35bf9e70c00fa9cdd 12396 shim-dbg_15.4-0ubuntu3_arm64.deb
+ 868dee99f64e513e5f66e41914a6c8979075b0d46a7f2e155b179c8de9d70766 6075 shim_15.4-0ubuntu3_arm64.buildinfo
+ a4b10319a139ce063d50cee970f4ac12a5c5d550d716a61415c13f154424eab4 12296 shim_15.4-0ubuntu3_arm64.deb
+ 9e92cde1b40abd762ee17ad0ab0f101923866104571685e269451d5cc397778f 638398 shim_15.4-0ubuntu3_arm64.tar.gz
 Files:
- 52434fd65e898c29a63a08b78fb8629f 12080 debug optional shim-dbg_15.4-0ubuntu2_arm64.deb
- b13bac134a553106b01561d62176a4be 6204 admin optional shim_15.4-0ubuntu2_arm64.buildinfo
- 337c5b7241e2e2738659cabfcdfe9b3d 11980 admin optional shim_15.4-0ubuntu2_arm64.deb
- 0986c0c195f6e180894b30f9ade01f27 638200 raw-signing - shim_15.4-0ubuntu2_arm64.tar.gz
+ c842db58ffdd15465fa688d51e77a3a0 12396 debug optional shim-dbg_15.4-0ubuntu3_arm64.deb
+ d6ab92fcf2f3c7e97d4a232253f34530 6075 admin optional shim_15.4-0ubuntu3_arm64.buildinfo
+ a31e91525f1860e00cef7f44a44dc8f8 12296 admin optional shim_15.4-0ubuntu3_arm64.deb
+ c11929cdb3f4e8cea4b2d4b0aac02369 638398 raw-signing - shim_15.4-0ubuntu3_arm64.tar.gz
 Original-Maintainer: Steve Langasek <vorlon@debian.org>
 
 +------------------------------------------------------------------------------+
@@ -3117,22 +3516,22 @@ Format: 1.0
 Source: shim
 Binary: shim shim-dbg
 Architecture: arm64
-Version: 15.4-0ubuntu2
+Version: 15.4-0ubuntu3
 Checksums-Md5:
- 52434fd65e898c29a63a08b78fb8629f 12080 shim-dbg_15.4-0ubuntu2_arm64.deb
- 337c5b7241e2e2738659cabfcdfe9b3d 11980 shim_15.4-0ubuntu2_arm64.deb
- 0986c0c195f6e180894b30f9ade01f27 638200 shim_15.4-0ubuntu2_arm64.tar.gz
+ c842db58ffdd15465fa688d51e77a3a0 12396 shim-dbg_15.4-0ubuntu3_arm64.deb
+ a31e91525f1860e00cef7f44a44dc8f8 12296 shim_15.4-0ubuntu3_arm64.deb
+ c11929cdb3f4e8cea4b2d4b0aac02369 638398 shim_15.4-0ubuntu3_arm64.tar.gz
 Checksums-Sha1:
- 862cceb41de57ce068c90b8027352f40a0b2bdd6 12080 shim-dbg_15.4-0ubuntu2_arm64.deb
- a1c42abd21f84034f49346cea900722bfc7a5d17 11980 shim_15.4-0ubuntu2_arm64.deb
- f82358123ce49af0b54d3a4e49b7310f74a25130 638200 shim_15.4-0ubuntu2_arm64.tar.gz
+ 737a117852ab7bd65b5aede7b09b994623e9076b 12396 shim-dbg_15.4-0ubuntu3_arm64.deb
+ 2a13ad2d6b90e2d3f84f05db71691a9c5252ff6b 12296 shim_15.4-0ubuntu3_arm64.deb
+ 931855cc48f28d662a02a407cc4966da4eefba65 638398 shim_15.4-0ubuntu3_arm64.tar.gz
 Checksums-Sha256:
- 317ac847ff0241db043adbfba6aa14195035e7ca1dbb729138b9efb0cd487274 12080 shim-dbg_15.4-0ubuntu2_arm64.deb
- 92472b2533ff8c019df3ca767bba8b032c4c55d7dfe846e0ab1d97fd5ce52430 11980 shim_15.4-0ubuntu2_arm64.deb
- 9312db3b7355f2a96307551a4d1a29b6bc6da6c4826f6341640770dfe48fa7da 638200 shim_15.4-0ubuntu2_arm64.tar.gz
+ def6f6eabe8977190dfaca234d110b69cd415df4d32253b35bf9e70c00fa9cdd 12396 shim-dbg_15.4-0ubuntu3_arm64.deb
+ a4b10319a139ce063d50cee970f4ac12a5c5d550d716a61415c13f154424eab4 12296 shim_15.4-0ubuntu3_arm64.deb
+ 9e92cde1b40abd762ee17ad0ab0f101923866104571685e269451d5cc397778f 638398 shim_15.4-0ubuntu3_arm64.tar.gz
 Build-Origin: Ubuntu
 Build-Architecture: arm64
-Build-Date: Tue, 20 Apr 2021 14:40:28 +0000
+Build-Date: Tue, 08 Jun 2021 14:45:36 +0000
 Build-Path: /<<PKGBUILDDIR>>
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
@@ -3142,108 +3541,108 @@ Installed-Build-Depends:
  automake (= 1:1.16.3-2ubuntu1),
  autopoint (= 0.21-3ubuntu2),
  autotools-dev (= 20180224.1+nmu1),
- base-files (= 11ubuntu19),
- base-passwd (= 3.5.49),
- bash (= 5.1-2ubuntu1),
+ base-files (= 11.1ubuntu3),
+ base-passwd (= 3.5.50),
+ bash (= 5.1-3ubuntu1),
  binutils (= 2.36.1-6ubuntu1),
  binutils-aarch64-linux-gnu (= 2.36.1-6ubuntu1),
  binutils-common (= 2.36.1-6ubuntu1),
  bsdextrautils (= 2.36.1-7ubuntu2),
  bsdutils (= 1:2.36.1-7ubuntu2),
- build-essential (= 12.8ubuntu3),
+ build-essential (= 12.9ubuntu1),
  bzip2 (= 1.0.8-4ubuntu3),
  coreutils (= 8.32-4ubuntu2),
- cpp (= 4:10.3.0-1ubuntu1),
- cpp-10 (= 10.3.0-1ubuntu1),
- dash (= 0.5.11+git20200708+dd9ef66+really0.5.11+git20200708+dd9ef66-5ubuntu1),
- debconf (= 1.5.74),
+ cpp (= 4:10.3.0-1ubuntu3),
+ cpp-10 (= 10.3.0-3ubuntu1),
+ dash (= 0.5.11+git20210120+802ebd4-1),
+ debconf (= 1.5.76),
  debhelper (= 13.3.4ubuntu1),
  debianutils (= 4.11.2),
- debugedit (= 1:0.1-0ubuntu2),
+ debugedit (= 1:0.2+20210520-0ubuntu1),
  dh-autoreconf (= 20),
  dh-buildinfo (= 0.11+nmu2),
- dh-strip-nondeterminism (= 1.11.0-1),
- diffutils (= 1:3.7-3ubuntu1),
+ dh-strip-nondeterminism (= 1.12.0-1),
+ diffutils (= 1:3.7-5ubuntu1),
  dos2unix (= 7.4.1-1),
  dpkg (= 1.20.9ubuntu1),
  dpkg-dev (= 1.20.9ubuntu1),
  dwz (= 0.14-1),
  file (= 1:5.39-3),
  findutils (= 4.8.0-1ubuntu1),
- g++ (= 4:10.3.0-1ubuntu1),
- g++-10 (= 10.3.0-1ubuntu1),
- gcc (= 4:10.3.0-1ubuntu1),
- gcc-10 (= 10.3.0-1ubuntu1),
- gcc-10-base (= 10.3.0-1ubuntu1),
- gcc-11-base (= 11-20210417-1ubuntu1),
+ g++ (= 4:10.3.0-1ubuntu3),
+ g++-10 (= 10.3.0-3ubuntu1),
+ gcc (= 4:10.3.0-1ubuntu3),
+ gcc-10 (= 10.3.0-3ubuntu1),
+ gcc-10-base (= 10.3.0-3ubuntu1),
+ gcc-11-base (= 11.1.0-2ubuntu1),
  gettext (= 0.21-3ubuntu2),
  gettext-base (= 0.21-3ubuntu2),
  grep (= 3.6-1),
  groff-base (= 1.22.4-6),
- gzip (= 1.10-2ubuntu3),
+ gzip (= 1.10-4ubuntu1),
  hostname (= 3.23),
  init-system-helpers (= 1.60),
  intltool-debian (= 0.35.0+20060710.5),
  libacl1 (= 2.2.53-10ubuntu1),
  libarchive-zip-perl (= 1.68-1),
- libasan6 (= 11-20210417-1ubuntu1),
- libatomic1 (= 11-20210417-1ubuntu1),
+ libasan6 (= 11.1.0-2ubuntu1),
+ libatomic1 (= 11.1.0-2ubuntu1),
  libattr1 (= 1:2.4.48-6build1),
  libaudit-common (= 1:3.0-2ubuntu1),
  libaudit1 (= 1:3.0-2ubuntu1),
  libbinutils (= 2.36.1-6ubuntu1),
  libblkid1 (= 2.36.1-7ubuntu2),
  libbz2-1.0 (= 1.0.8-4ubuntu3),
- libc-bin (= 2.33-0ubuntu5),
- libc-dev-bin (= 2.33-0ubuntu5),
- libc6 (= 2.33-0ubuntu5),
- libc6-dev (= 2.33-0ubuntu5),
+ libc-bin (= 2.33-0ubuntu7),
+ libc-dev-bin (= 2.33-0ubuntu7),
+ libc6 (= 2.33-0ubuntu7),
+ libc6-dev (= 2.33-0ubuntu7),
  libcap-ng0 (= 0.7.9-2.2build1),
  libcap2 (= 1:2.44-1build1),
- libcc1-0 (= 11-20210417-1ubuntu1),
- libcom-err2 (= 1.45.7-1ubuntu2),
- libcrypt-dev (= 1:4.4.17-1ubuntu3),
- libcrypt1 (= 1:4.4.17-1ubuntu3),
+ libcc1-0 (= 11.1.0-2ubuntu1),
+ libcom-err2 (= 1.46.2-1ubuntu2),
+ libcrypt-dev (= 1:4.4.18-4ubuntu1),
+ libcrypt1 (= 1:4.4.18-4ubuntu1),
  libctf-nobfd0 (= 2.36.1-6ubuntu1),
  libctf0 (= 2.36.1-6ubuntu1),
- libdb5.3 (= 5.3.28+dfsg1-0.6ubuntu4),
+ libdb5.3 (= 5.3.28+dfsg1-0.8ubuntu1),
  libdebconfclient0 (= 0.256ubuntu3),
  libdebhelper-perl (= 13.3.4ubuntu1),
  libdpkg-perl (= 1.20.9ubuntu1),
- libdw1 (= 0.183-8),
- libelf-dev (= 0.183-8),
- libelf1 (= 0.183-8),
- libfile-stripnondeterminism-perl (= 1.11.0-1),
- libgcc-10-dev (= 10.3.0-1ubuntu1),
- libgcc-s1 (= 11-20210417-1ubuntu1),
- libgcrypt20 (= 1.8.7-2ubuntu2),
+ libdw1 (= 0.185-1),
+ libelf-dev (= 0.185-1),
+ libelf1 (= 0.185-1),
+ libfile-stripnondeterminism-perl (= 1.12.0-1),
+ libgcc-10-dev (= 10.3.0-3ubuntu1),
+ libgcc-s1 (= 11.1.0-2ubuntu1),
+ libgcrypt20 (= 1.8.7-5ubuntu1),
  libgdbm-compat4 (= 1.19-2),
  libgdbm6 (= 1.19-2),
  libgmp10 (= 2:6.2.1+dfsg-1ubuntu2),
- libgomp1 (= 11-20210417-1ubuntu1),
+ libgomp1 (= 11.1.0-2ubuntu1),
  libgpg-error0 (= 1.38-2build1),
- libgssapi-krb5-2 (= 1.18.3-4),
+ libgssapi-krb5-2 (= 1.18.3-5),
  libicu67 (= 67.1-6ubuntu2),
- libisl23 (= 0.23-1build1),
- libitm1 (= 11-20210417-1ubuntu1),
- libk5crypto3 (= 1.18.3-4),
+ libisl23 (= 0.24-1),
+ libitm1 (= 11.1.0-2ubuntu1),
+ libk5crypto3 (= 1.18.3-5),
  libkeyutils1 (= 1.6.1-2ubuntu1),
- libkrb5-3 (= 1.18.3-4),
- libkrb5support0 (= 1.18.3-4),
- liblsan0 (= 11-20210417-1ubuntu1),
- liblz4-1 (= 1.9.3-1build1),
- liblzma5 (= 5.2.5-1.0build2),
+ libkrb5-3 (= 1.18.3-5),
+ libkrb5support0 (= 1.18.3-5),
+ liblsan0 (= 11.1.0-2ubuntu1),
+ liblz4-1 (= 1.9.3-2),
+ liblzma5 (= 5.2.5-2),
  libmagic-mgc (= 1:5.39-3),
  libmagic1 (= 1:5.39-3),
  libmount1 (= 2.36.1-7ubuntu2),
  libmpc3 (= 1.2.0-1build1),
  libmpfr6 (= 4.1.0-3build1),
- libnsl-dev (= 1.3.0-0ubuntu3),
- libnsl2 (= 1.3.0-0ubuntu3),
- libpam-modules (= 1.3.1-5ubuntu6),
- libpam-modules-bin (= 1.3.1-5ubuntu6),
- libpam-runtime (= 1.3.1-5ubuntu6),
- libpam0g (= 1.3.1-5ubuntu6),
+ libnsl-dev (= 1.3.0-2),
+ libnsl2 (= 1.3.0-2),
+ libpam-modules (= 1.3.1-5ubuntu7),
+ libpam-modules-bin (= 1.3.1-5ubuntu7),
+ libpam-runtime (= 1.3.1-5ubuntu7),
+ libpam0g (= 1.3.1-5ubuntu7),
  libpcre2-8-0 (= 10.36-2ubuntu5),
  libpcre3 (= 2:8.39-13build3),
  libperl5.32 (= 5.32.1-3ubuntu2),
@@ -3252,28 +3651,28 @@ Installed-Build-Depends:
  libselinux1 (= 3.1-3build1),
  libsigsegv2 (= 2.13-1ubuntu1),
  libsmartcols1 (= 2.36.1-7ubuntu2),
- libssl1.1 (= 1.1.1j-1ubuntu3),
- libstdc++-10-dev (= 10.3.0-1ubuntu1),
- libstdc++6 (= 11-20210417-1ubuntu1),
+ libssl1.1 (= 1.1.1j-1ubuntu4),
+ libstdc++-10-dev (= 10.3.0-3ubuntu1),
+ libstdc++6 (= 11.1.0-2ubuntu1),
  libsub-override-perl (= 0.09-2),
- libsystemd0 (= 247.3-3ubuntu3),
+ libsystemd0 (= 248.3-1ubuntu1),
  libtinfo6 (= 6.2+20201114-2build1),
  libtirpc-common (= 1.3.1-1build1),
  libtirpc-dev (= 1.3.1-1build1),
  libtirpc3 (= 1.3.1-1build1),
  libtool (= 2.4.6-15),
- libtsan0 (= 11-20210417-1ubuntu1),
- libubsan1 (= 11-20210417-1ubuntu1),
+ libtsan0 (= 11.1.0-2ubuntu1),
+ libubsan1 (= 11.1.0-2ubuntu1),
  libuchardet0 (= 0.0.7-1),
- libudev1 (= 247.3-3ubuntu3),
+ libudev1 (= 248.3-1ubuntu1),
  libunistring2 (= 0.9.10-4),
  libuuid1 (= 2.36.1-7ubuntu2),
- libxml2 (= 2.9.10+dfsg-6.3build2),
- libzstd1 (= 1.4.8+dfsg-2build2),
- linux-libc-dev (= 5.11.0-16.17),
+ libxml2 (= 2.9.10+dfsg-6.7),
+ libzstd1 (= 1.4.8+dfsg-2.1),
+ linux-libc-dev (= 5.11.0-18.19+21.10.1),
  login (= 1:4.8.1-1ubuntu8),
  lsb-base (= 11.1.0ubuntu2),
- lto-disabled-list (= 7),
+ lto-disabled-list (= 9),
  m4 (= 1.4.18-5),
  make (= 4.3-4ubuntu1),
  man-db (= 2.9.4-2),
@@ -3288,11 +3687,11 @@ Installed-Build-Depends:
  rpcsvc-proto (= 1.4.2-0ubuntu4),
  sed (= 4.7-1ubuntu1),
  sensible-utils (= 0.0.14),
- sysvinit-utils (= 2.96-6ubuntu1),
+ sysvinit-utils (= 2.96-7ubuntu1),
  tar (= 1.34+dfsg-1build1),
  util-linux (= 2.36.1-7ubuntu2),
- xxd (= 2:8.2.2434-1ubuntu1),
- xz-utils (= 5.2.5-1.0build2),
+ xxd (= 2:8.2.2434-3ubuntu1),
+ xz-utils (= 5.2.5-2),
  zlib1g (= 1:1.2.11.dfsg-2ubuntu6),
  zlib1g-dev (= 1:1.2.11.dfsg-2ubuntu6)
 Environment:
@@ -3300,7 +3699,7 @@ Environment:
  DEB_BUILD_PROFILES="noudeb"
  LANG="C.UTF-8"
  LC_ALL="C.UTF-8"
- SOURCE_DATE_EPOCH="1618928669"
+ SOURCE_DATE_EPOCH="1623163337"
 
 
 +------------------------------------------------------------------------------+
@@ -3308,20 +3707,20 @@ Environment:
 +------------------------------------------------------------------------------+
 
 
-shim-dbg_15.4-0ubuntu2_arm64.deb
+shim-dbg_15.4-0ubuntu3_arm64.deb
 --------------------------------
 
  new Debian package, version 2.0.
- size 12080 bytes: control archive=840 bytes.
+ size 12396 bytes: control archive=840 bytes.
      768 bytes,    18 lines      control              
      220 bytes,     3 lines      md5sums              
  Package: shim-dbg
  Source: shim
- Version: 15.4-0ubuntu2
+ Version: 15.4-0ubuntu3
  Architecture: arm64
  Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
  Installed-Size: 33
- Depends: shim (= 15.4-0ubuntu2)
+ Depends: shim (= 15.4-0ubuntu3)
  Section: debug
  Priority: optional
  Description: boot loader to chain-load signed boot loaders under Secure Boot (dbg symbols)
@@ -3334,31 +3733,31 @@ shim-dbg_15.4-0ubuntu2_arm64.deb
   Debug symbols.
  Original-Maintainer: Steve Langasek <vorlon@debian.org>
 
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/debug/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/debug/boot/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/debug/boot/efi/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/debug/boot/efi/EFI/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/lib/debug/boot/efi/EFI/ubuntu/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/doc/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/doc/shim-dbg/
--rw-r--r-- root/root      2488 2021-04-20 14:24 ./usr/share/doc/shim-dbg/buildinfo_arm64.gz
--rw-r--r-- root/root      5176 2021-04-20 14:24 ./usr/share/doc/shim-dbg/changelog.Debian.gz
--rw-r--r-- root/root     11823 2021-04-06 15:16 ./usr/share/doc/shim-dbg/copyright
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/debug/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/debug/boot/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/debug/boot/efi/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/debug/boot/efi/EFI/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/lib/debug/boot/efi/EFI/ubuntu/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/doc/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/doc/shim-dbg/
+-rw-r--r-- root/root      2504 2021-06-08 14:42 ./usr/share/doc/shim-dbg/buildinfo_arm64.gz
+-rw-r--r-- root/root      5481 2021-06-08 14:42 ./usr/share/doc/shim-dbg/changelog.Debian.gz
+-rw-r--r-- root/root     11823 2021-06-08 14:42 ./usr/share/doc/shim-dbg/copyright
 
 
-shim_15.4-0ubuntu2_arm64.deb
+shim_15.4-0ubuntu3_arm64.deb
 ----------------------------
 
  new Debian package, version 2.0.
- size 11980 bytes: control archive=816 bytes.
+ size 12296 bytes: control archive=816 bytes.
      717 bytes,    15 lines      control              
      208 bytes,     3 lines      md5sums              
  Package: shim
- Version: 15.4-0ubuntu2
+ Version: 15.4-0ubuntu3
  Architecture: arm64
  Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
  Installed-Size: 27
@@ -3373,14 +3772,14 @@ shim_15.4-0ubuntu2_arm64.deb
   an OS distributor to revision their main bootloader independently of the CA.
  Original-Maintainer: Steve Langasek <vorlon@debian.org>
 
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/doc/
-drwxr-xr-x root/root         0 2021-04-20 14:24 ./usr/share/doc/shim/
--rw-r--r-- root/root      2488 2021-04-20 14:24 ./usr/share/doc/shim/buildinfo_arm64.gz
--rw-r--r-- root/root      5176 2021-04-20 14:24 ./usr/share/doc/shim/changelog.Debian.gz
--rw-r--r-- root/root     11823 2021-04-06 15:16 ./usr/share/doc/shim/copyright
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/doc/
+drwxr-xr-x root/root         0 2021-06-08 14:42 ./usr/share/doc/shim/
+-rw-r--r-- root/root      2504 2021-06-08 14:42 ./usr/share/doc/shim/buildinfo_arm64.gz
+-rw-r--r-- root/root      5481 2021-06-08 14:42 ./usr/share/doc/shim/changelog.Debian.gz
+-rw-r--r-- root/root     11823 2021-06-08 14:42 ./usr/share/doc/shim/copyright
 
 
 +------------------------------------------------------------------------------+
@@ -3402,21 +3801,21 @@ Not removing build depends: as requested
 Build Architecture: arm64
 Build Type: any
 Build-Space: n/a
-Build-Time: 68
-Distribution: hirsute
+Build-Time: 70
+Distribution: impish
 Host Architecture: arm64
-Install-Time: 14
-Job: shim_15.4-0ubuntu2.dsc
+Install-Time: 13
+Job: shim_15.4-0ubuntu3.dsc
 Machine Architecture: arm64
 Package: shim
-Package-Time: 84
-Source-Version: 15.4-0ubuntu2
+Package-Time: 85
+Source-Version: 15.4-0ubuntu3
 Space: n/a
 Status: successful
-Version: 15.4-0ubuntu2
+Version: 15.4-0ubuntu3
 --------------------------------------------------------------------------------
-Finished at 2021-04-20T14:40:29Z
-Build needed 00:01:24, no disk space
+Finished at 2021-06-08T14:45:36Z
+Build needed 00:01:25, no disk space
 Adding user buildd to group lxd
-RUN: /usr/share/launchpad-buildd/bin/in-target scan-for-processes --backend=chroot --series=hirsute --arch=arm64 PACKAGEBUILD-21433248
-Scanning for processes to kill in build PACKAGEBUILD-21433248
+RUN: /usr/share/launchpad-buildd/bin/in-target scan-for-processes --backend=chroot --series=impish --arch=arm64 PACKAGEBUILD-21673018
+Scanning for processes to kill in build PACKAGEBUILD-21673018
