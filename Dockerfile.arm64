@@ -9,6 +9,6 @@ WORKDIR /shim
 RUN apt build-dep -y ./
 RUN gbp buildpackage -us -uc
 WORKDIR /
-RUN hexdump -Cv /shim-review/shimxaa4.efi > orig
+RUN hexdump -Cv /shim-review/shimaa64.efi > orig
 RUN hexdump -Cv /shim/shimaa64.efi > build
 RUN diff -u orig build
