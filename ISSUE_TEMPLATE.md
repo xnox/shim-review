@@ -144,7 +144,7 @@ kernel module signatures under lockdown.
 New patches since last submission:
 
  * debian/patches/372.patch: do not fail on out of resources when mirroring
-   on non-secure systems. Cherrypick of https://github.com/rhboot/shim/pull/364
+   on non-secure systems. Cherrypick of https://github.com/rhboot/shim/pull/372
 
  * debian/patches/378.patch: Fixes for exiting shim, caused crashes and failure
    to exit grub and return (it would reboot instead). Cherrypick of
