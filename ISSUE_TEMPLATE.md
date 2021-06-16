@@ -158,14 +158,14 @@ New patches since last submission:
 
 Plain sha256sum, unsigned EFI app:
 ```
-$ sha256sum 15.4-0ubuntu3/shim*.efi
-1e948efe0e74a2280020cd06122f14cbcb252b0a73e852255255dd92fd3f2fb5  15.4-0ubuntu3/shimaa64.efi
-dc5da6c441f6758245ca674697a7847dd3b65f4e2e5474dcacec4c36a47d8176  15.4-0ubuntu3/shimx64.efi
+$ sha256sum 15.4-0ubuntu5/shim*.efi
+04c4ec2e3f8e4cbfe694fb9a51f7cda56136e30957d662a5af6d70eeb16dcae2  15.4-0ubuntu5/shimaa64.efi
+b0bd3023fade3e3d1601c88792064ef8113125a51e00909f0231a05485391985  15.4-0ubuntu5/shimx64.efi
 ```
 
 Authenticode hashes:
 ```
-$ hash-to-efi-sig-list 15.4-0ubuntu3/shim{aa,x}64.efi /dev/null
-HASH IS d86b9be535886d6a61fbc9a37df9e709ba129e9eed24c606e825a25fa6724d91
-HASH IS 191961462ded69cd6ffd1c00246b9a95815aa7879df1a167f4f6fec4a140e144
+$ hash-to-efi-sig-list 15.4-0ubuntu5/shim{aa,x}64.efi /dev/null
+HASH IS b546b63dcd649d26faf2f0e6bbbf9e052a8e017e6b704bd766ad4cf2c490438e
+HASH IS f3a4673ed94c4f00e2222066191ca6fe3d1d411f5ce5d748a0c180f5243a5ab3
 ```
