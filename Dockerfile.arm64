@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:impish
+FROM arm64v8/ubuntu:hirsute
 
 RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list
 RUN apt update -y
