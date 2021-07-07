@@ -205,7 +205,7 @@ libc6-dev 2.33-0ubuntu5
 
 To build:
 
-Use included Dockerfile;
+Use included Dockerfiles;
 
 OR
 
@@ -225,6 +225,8 @@ Steps to build shim:
 - cd shim
 - apt build-dep -y ./
 - gbp buildpackage -us -uc
+
+arm64 builds are not entirely reproducible, their build id changes.
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
