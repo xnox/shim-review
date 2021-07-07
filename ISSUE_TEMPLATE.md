@@ -23,7 +23,7 @@ Ubuntu
 ###### the appropriate gnu-efi source.
 ###### Please confirm this as the origin your shim.
 Build is based on shim-15.4.tar.gz2
-It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210616
+It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210707
 
 ###### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 Ubuntu is a popular OS.
@@ -143,16 +143,10 @@ kernel module signatures under lockdown.
 
 New patches since last submission:
 
- * debian/patches/372.patch: do not fail on out of resources when mirroring
-   on non-secure systems. Cherrypick of https://github.com/rhboot/shim/pull/372
-
- * debian/patches/378.patch: Fixes for exiting shim, caused crashes and failure
-   to exit grub and return (it would reboot instead). Cherrypick of
-   https://github.com/rhboot/shim/pull/378
-
- * debian/patches/ubuntu-no-addend-vendor-dbx.patch: Stop addending the vendor
-   dbx to the MokListX, ours is too large. Our kernels don't read it anyway,
-   and new ones that will can just embed it themselves.
+  * 379: Fix load option parsing, and thus fwupd execution (LP: #1929471) (PR rhboot/shim#379)
+  * 383: Fix occasional crashes in _relocate() on arm64 (LP: #1928010) (PR rhboot/shim#383)
+  * 387: Fix accidental deletion of RT variables (LP: #1934506) (PR rhboot/shim#387)
+  * 369: mok: relax the maximum variable size check (LP: #1934780) (PR rhboot/shim#369)
 
 ###### What is the SHA256 hash of your final SHIM binary?
 
@@ -165,7 +159,7 @@ $ sha256sum 15.4-0ubuntu*/shim*.efi
 
 Authenticode hashes:
 ```
-$ hash-to-efi-sig-list 15.4-0ubuntu5/shim{aa,x}64.efi /dev/null
-HASH IS b546b63dcd649d26faf2f0e6bbbf9e052a8e017e6b704bd766ad4cf2c490438e
-HASH IS f3a4673ed94c4f00e2222066191ca6fe3d1d411f5ce5d748a0c180f5243a5ab3
+$ hash-to-efi-sig-list 15.4-0ubuntu7/shim{aa,x}64.efi /dev/null
+HASH IS 7601c51ea7de35b1ca46593edc6c8779b6f35f690edbac391a10fa8fe9e502c1
+HASH IS 0f87dfd530645c0e0197b89938f0659c943e5eceffec74f09fefa135f4ee76e6
 ```

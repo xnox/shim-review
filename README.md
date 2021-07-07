@@ -85,8 +85,6 @@ What patches are being applied and why:
  * debian/patches/364.patch: fails to boot on older Macs. Cherrypick
    of merged https://github.com/rhboot/shim/pull/364
 
- New patches since last submission:
-
  * debian/patches/372.patch: do not fail on out of resources when mirroring
    on non-secure systems. Cherrypick of https://github.com/rhboot/shim/pull/364
 
@@ -97,6 +95,14 @@ What patches are being applied and why:
  * debian/patches/ubuntu-no-addend-vendor-dbx.patch: Stop addending the vendor
    dbx to the MokListX, ours is too large. Our kernels don't read it anyway,
    and new ones that will can just embed it themselves.
+
+ New patches since last submission:
+
+  * 379: Fix load option parsing, and thus fwupd execution (LP: #1929471) (PR rhboot/shim#379)
+  * 383: Fix occasional crashes in _relocate() on arm64 (LP: #1928010) (PR rhboot/shim#383)
+  * 387: Fix accidental deletion of RT variables (LP: #1934506) (PR rhboot/shim#387)
+  * 369: mok: relax the maximum variable size check (LP: #1934780) (PR rhboot/shim#369)
+
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
