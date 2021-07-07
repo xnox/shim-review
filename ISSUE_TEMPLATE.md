@@ -158,9 +158,9 @@ New patches since last submission:
 
 Plain sha256sum, unsigned EFI app:
 ```
-$ sha256sum 15.4-0ubuntu5/shim*.efi
-04c4ec2e3f8e4cbfe694fb9a51f7cda56136e30957d662a5af6d70eeb16dcae2  15.4-0ubuntu5/shimaa64.efi
-b0bd3023fade3e3d1601c88792064ef8113125a51e00909f0231a05485391985  15.4-0ubuntu5/shimx64.efi
+$ sha256sum 15.4-0ubuntu*/shim*.efi
+7f863f56a6ec25013cc33f729676c42a31cf19de7c231b93fe287f9560d566cb  15.4-0ubuntu7/shimaa64.efi
+2c3a5f49988b7a93bd3986386cb60d9b5e08e2567d8b3e4d91aba3e41160d1ca  15.4-0ubuntu7/shimx64.efi
 ```
 
 Authenticode hashes:
