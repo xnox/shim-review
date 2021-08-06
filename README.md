@@ -96,13 +96,17 @@ What patches are being applied and why:
    dbx to the MokListX, ours is too large. Our kernels don't read it anyway,
    and new ones that will can just embed it themselves.
 
- New patches since last submission:
-
   * 379: Fix load option parsing, and thus fwupd execution (LP: #1929471) (PR rhboot/shim#379)
-  * 383: Fix occasional crashes in _relocate() on arm64 (LP: #1928010) (PR rhboot/shim#383)
+  * 383: Fix occasional crashes in `_relocate()` on arm64 (LP: #1928010) (PR rhboot/shim#383)
   * 387: Fix accidental deletion of RT variables (LP: #1934506) (PR rhboot/shim#387)
   * 369: mok: relax the maximum variable size check (LP: #1934780) (PR rhboot/shim#369)
 
+ New patches since last submission:
+
+  * 365.patch - cherry-pick of rhboot/shim#365
+  * 393-1.patch and 393-2.patch - backport of rhboot/shim#393
+  * 396.patch - cherry-pick rhboot/shim#396
+  * 399-1.patch and 399-2.patch - backport of rhboot/shim#399
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -110,7 +114,7 @@ If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
  CVE-2020-10713, CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311,
  CVE-2020-15705, and if you are shipping the shim_lock module CVE-2021-3418
 -------------------------------------------------------------------------------
-grub2 2.04-1ubuntu45
+grub2 2.04-1ubuntu44 and newer
 
 Patch set for EFI is from https://github.com/rhboot/grub2/commits/grub-2.02-sb
 Patches are all available in the repo for grub2:
@@ -199,9 +203,9 @@ What OS and toolchain must we use to reproduce this build?  Include where to fin
 If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and the differences would be.
 -------------------------------------------------------------------------------
 Ubuntu 21.04 (Hirsute development)
-binutils 2.36.1-6ubuntu1
-gcc-10 10.3.0-1ubuntu1
-libc6-dev 2.33-0ubuntu5
+ binutils (= 2.36.1-6ubuntu1),
+ gcc-10 (= 10.3.0-1ubuntu1),
+ libc6-dev (= 2.33-0ubuntu5),
 
 To build:
 

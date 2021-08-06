@@ -23,7 +23,7 @@ Ubuntu
 ###### the appropriate gnu-efi source.
 ###### Please confirm this as the origin your shim.
 Build is based on shim-15.4.tar.gz2
-It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210707
+It is located at CanonicalLtd/shim-review@ubuntu-shim-amd64+arm64-20210806
 
 ###### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 Ubuntu is a popular OS.
@@ -143,23 +143,23 @@ kernel module signatures under lockdown.
 
 New patches since last submission:
 
-  * 379: Fix load option parsing, and thus fwupd execution (LP: #1929471) (PR rhboot/shim#379)
-  * 383: Fix occasional crashes in _relocate() on arm64 (LP: #1928010) (PR rhboot/shim#383)
-  * 387: Fix accidental deletion of RT variables (LP: #1934506) (PR rhboot/shim#387)
-  * 369: mok: relax the maximum variable size check (LP: #1934780) (PR rhboot/shim#369)
+  * 365.patch - cherry-pick of rhboot/shim#365
+  * 393-1.patch and 393-2.patch - backport of rhboot/shim#393
+  * 396.patch - cherry-pick rhboot/shim#396
+  * 399-1.patch and 399-2.patch - backport of rhboot/shim#399
 
 ###### What is the SHA256 hash of your final SHIM binary?
 
 Plain sha256sum, unsigned EFI app:
 ```
 $ sha256sum 15.4-0ubuntu*/shim*.efi
-7f863f56a6ec25013cc33f729676c42a31cf19de7c231b93fe287f9560d566cb  15.4-0ubuntu7/shimaa64.efi
-2c3a5f49988b7a93bd3986386cb60d9b5e08e2567d8b3e4d91aba3e41160d1ca  15.4-0ubuntu7/shimx64.efi
+8eea86df273688bc6d548c752ace2036632479a073a4314ee2cca91a3251b1aa  15.4-0ubuntu9/shimaa64.efi
+7c307799a1173e113f1891af2e604abb948e8de5d98039e72dc1a003b4bdfc79  15.4-0ubuntu9/shimx64.efi
 ```
 
 Authenticode hashes:
 ```
-$ hash-to-efi-sig-list 15.4-0ubuntu7/shim{aa,x}64.efi /dev/null
-HASH IS 7601c51ea7de35b1ca46593edc6c8779b6f35f690edbac391a10fa8fe9e502c1
-HASH IS 0f87dfd530645c0e0197b89938f0659c943e5eceffec74f09fefa135f4ee76e6
+$ hash-to-efi-sig-list 15.4-0ubuntu9/shim{aa,x}64.efi /dev/null
+HASH IS 2e09c1ad4d24d1057b387009d5a6fac2e1a5d85d33ebf18396ed32ee16b72d16
+HASH IS dbffd70a2c43fd2c1931f18b8f8c08c5181db15f996f747dfed34def52fad036
 ```
