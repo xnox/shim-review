@@ -152,19 +152,22 @@ cert being revoked in vendor dbx.
 -------------------------------------------------------------------------------
 ### Do you build your signed kernel with additional local patches? What do they do?
 -------------------------------------------------------------------------------
-VENDOR_DB is not used.
+
+Yes but there are like hundred patches and like 80 different kernels, so it's a bit
+much to include here. There's additional secure boot enforcing patches, hardware
+enablement, and zfs is built alongside.
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
-We are shipping vendor_dbx that includes all previously used certificates.
+VENDOR_DB is not used.
 
 -------------------------------------------------------------------------------
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-All previous certificates are revoked via vendor_dbx, this is clean slate.
+We are shipping vendor_dbx that includes all previously used certificates.
 
 
 -------------------------------------------------------------------------------
