@@ -252,12 +252,14 @@ grub:
 fwupd:
 
     sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-    fwupd,1,Firmware update daemon,fwupd,1.5.8,https://github.com/fwupd/fwupd
-    fwupd.ubuntu,1,Ubuntu,fwupd,1.5.8-0ubuntu1,https://launchpad.net/ubuntu/+source/fwupd
+    fwupd,1,Firmware update daemon,fwupd,1.5.11,https://github.com/fwupd/fwupd
+    fwupd.ubuntu,1,Ubuntu,fwupd,1.5.11-0ubuntu2,https://launchpad.net/ubuntu/+source/fwupd
 
 kernel.efi:
 
-	FIXME: add kernel.efi stub
+    sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+    systemd,1,The systemd Developers,systemd,245,https://www.freedesktop.org/wiki/Software/systemd
+    systemd.ubuntu,1,Ubuntu,systemd,245.4-4ubuntu3.6,https://bugs.launchpad.net/ubuntu/
 
 FIXME: Update grub fwupd sbats with real ones.
 
