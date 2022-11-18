@@ -215,7 +215,7 @@ Rebased against 15.7
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-[your text here]
+FIXME: [your text here]
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
@@ -257,8 +257,9 @@ fwupd:
 
 kernel.efi:
 
-    TBD We might start loading kernel.efi in the future which is systemd
-    sd-boot stub, linux kernel, initrd, cmdline as a single EFI app.
+	FIXME: add kernel.efi stub
+
+FIXME: Update grub fwupd sbats with real ones.
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
@@ -375,12 +376,13 @@ https://code.launchpad.net/~ubuntu-core-dev/grub/+git/ubuntu/+ref/ubuntu
 
 Note patches debian/patches
 
+FIXME: latest grub not public yet
+
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-kernel.efi:
-TBD We might start loading kernel.efi in the future which is systemd
-sd-boot stub, linux kernel, initrd, cmdline as a single EFI app.
+We load various UKIs which use systemd-boot stub to combine kernels and initrds
+into a single binary.
 
 fwupd of course.
 
@@ -397,10 +399,7 @@ which will verify things again as usual. (https://maas.io usecase).
 -------------------------------------------------------------------------------
 fwupd verifies capsule signatures; kernel implements lockdown.
 
-Note that currently kernel does not yet implement correct checking of
-MokListXRT for kexec, thus one currently can kexec revoked/old kernels
-from the booted good kernel.
-
+Our kernels also check MokListXRT for revocations for kexec.
 
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
@@ -419,40 +418,28 @@ kernel module signatures under lockdown.
 ### Add any additional information you think we may need to validate this shim.
 -------------------------------------------------------------------------------
 
-VENDOR_DBX files for amd64 & arm64 are included in this repo as
-canonical-2021_amd64.esl and canonical-2021_arm64.esl
-One can unpack them using `sig-list-to-certs` utility.
-After that, one can walk launchpad queues to find all the interesting
-signing & uefi tarballs to verify that everything is included as
-stated.
-The number of hashes is large:
-amd64 - 1 cert & 378 hashes
-arm64 - 1 cert & 170 hashes
+VENDOR_DBX file is included as canonical-dbx-20221103.esl
+One can unpack them using `sig-list-to-certs` utility, and
+finds as the changelog states:
 
-For our next shim after this one, we will ensure that kernel correctly
-rejects kernels for kexec based on MokListXRT including by-cert
-revocation, start signing such kernels with the new signing
-certificate, and replaces all the hashes in the vendor dbx with the
-currently in use certs.
+    This vendor dbx revokes all certificates that have been used
+    so far.
+    - CN = Canonical Ltd. Secure Boot Signing
+    - CN = Canonical Ltd. Secure Boot Signing (2017)
+    - CN = Canonical Ltd. Secure Boot Signing (ESM 2018)
+    - CN = Canonical Ltd. Secure Boot Signing (2019)
+    - CN = Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019)
+    - CN = Canonical Ltd. Secure Boot Signing (2021 v1)
+    - CN = Canonical Ltd. Secure Boot Signing (2021 v2)
+    - CN = Canonical Ltd. Secure Boot Signing (2021 v3)
 
-Other changes compared with our previous shim submissions:
- - out of MokListRT mirror size considerations, we have stopped using
-   shim's ephemeral signing certificate. And instead we use our
-   signing cert issued by our CA to sign fb.efi & mm.efi like most
-   other distros do. This also now makes our shim builds reproducible
-   like everyone else.
 
- - Above means that our unsigned shim/fb/mm are now produced in a
-   custom upload tarball during the build, and are no longer in the
-   shim.deb. As that's how one submits EFI apps for signing in
-   Launchpad.
+- we have disabled ExitBootServices check, to allow chainloading a
+  second shim from disk, from netbooted shim+grub. All shims these
+  days require signature validation thus this is safe to do. We need
+  this to support secureboot in https://maas.io which by default
+  netboots & recovers bare metal machines.
 
- - we have disabled ExitBootServices check, to allow chainloading a
-   second shim from disk, from netbooted shim+grub. All shims these
-   days require signature validation thus this is safe to do. We need
-   this to support secureboot in https://maas.io which by default
-   netboots & recovers bare metal machines.
-
- - we have disabled the unacceptable 5s boot delay in fallback when
-   TPM is present, as it impacts bootspeed for the noninteractive
-   cloud instances that have vTPM & SecureBoot.
+- we have disabled the unacceptable 5s boot delay in fallback when
+  TPM is present, as it impacts bootspeed for the noninteractive
+  cloud instances that have vTPM & SecureBoot.
