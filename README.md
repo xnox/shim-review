@@ -68,12 +68,13 @@ like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
 
 -------------------------------------------------------------------------------
-### Were these binaries created from the 15.6 shim release tar?
-Please create your shim binaries starting with the 15.6 shim release tar file: https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
+### Were these binaries created from the 15.7 shim release tar?
+Please create your shim binaries starting with the 15.7 shim release tar file: https://github.com/rhboot/shim/releases/download/15.7/shim-15.7.tar.bz2
 
-This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
+This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the appropriate gnu-efi source.
+
 -------------------------------------------------------------------------------
-The shim-15.7.tar.bz2 (!) is used as the original tarball.
+The shim-15.7.tar.bz2 is used as the original tarball.
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
@@ -99,7 +100,8 @@ No new patches.
 2.06 with lockdown backports, shim_lock, with rhboot/linuxefi/Canonical like implementation.
 
 -------------------------------------------------------------------------------
-### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
+### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, the June 7th 2022 grub2 CVE list, or the November 15th 2022 list, have fixes for all these CVEs been applied?
+
 * CVE-2020-14372
 * CVE-2020-25632
 * CVE-2020-25647
@@ -123,6 +125,18 @@ No new patches.
 * CVE-2022-28735
 * CVE-2022-28736
 * CVE-2022-28737
+
+* CVE-2022-2601
+* CVE-2022-3775
+-------------------------------------------------------------------------------
+Yes.
+
+-------------------------------------------------------------------------------
+### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
+
+-------------------------------------------------------------------------------
+
+Yes.
 
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
